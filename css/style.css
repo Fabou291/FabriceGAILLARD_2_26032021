@@ -94,6 +94,7 @@ body{
         display : flex; 
         margin-right : -25px;
     }
+    .header__menu ul { display : flex; align-items:center; }
 
         .header__menu ul { display : flex; align-items:center; }
 
@@ -119,6 +120,7 @@ body{
         }
         .header__btn__subsription:hover { border : 2px solid #0065fc; }
         .header__btn__subsription:visited { color : #0065fc; }
+        .header__btn__subsription:active { background-color : #0065fc; color : white; }
 
 
 
