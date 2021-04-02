@@ -90,28 +90,35 @@ body{
     justify-content: space-between;
 }
     
-    .header__menu{
-        display : flex;
+    .header__menu { 
+        display : flex; 
+        margin-right : -25px;
     }
 
-        .header__menu ul{
-            display : flex;
-        }
-            
+        .header__menu ul { display : flex; align-items:center; }
 
             .header__menu__item { 
                 display : block; 
                 padding : 48px 25px; 
                 margin-left : 30px; 
-                border-top : 2px solid white; 
+                
+                border-top : 2px solid transparent; 
             }
             .header__menu__item:visited { color : inherit; }
+            .header__menu__item:hover { color : #0065fc;  }
+            .header__menu__item:focus { color : #0065fc; border-color : #0065fc; }
 
-            .header__menu__item:hover { border-color : #0065fc; color : #0065fc; }
-            .header__menu__item:focus { border-color : #0065fc; color : #0065fc; }
-
-            .header__subsription{ color : #0065fc; font-weight : bold; border : none !important; }
-            .header__subsription:visited { color : #0065fc; }
+        .header__btn__subsription { 
+            display : block;
+            color : #0065fc; 
+            font-weight : bold; 
+            border : 2px solid transparent;
+            border-radius : 30px;
+            padding : 10px 20px;
+            margin-left : 30px; 
+        }
+        .header__btn__subsription:hover { border : 2px solid #0065fc; }
+        .header__btn__subsription:visited { color : #0065fc; }
 
 
 
