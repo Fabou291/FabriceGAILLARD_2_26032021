@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Reservia - Trouver votre hébergement pour des vacances de rêve</title>
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/fontawesome-all.css">
     <!--
     <link rel="preload" href="css/fonts/Raleway-Medium.ttf" as="font" type="font/ttf" crossorigin>
     <link rel="preload" href="css/fonts/Raleway-Bold.ttf" as="font" type="font/ttf" crossorigin>
@@ -25,7 +26,19 @@
     </header>
 
     <main class="l-main">
+        <section class="research">
+            <h1>Trouvez votre hébergement pour des vacances de rêves</h1>
+            <p>En plein centre ville ou en pleine nature</p>
 
+            <form method="POST" action="" class="search">
+                <button class="search_map"><i class="fas fa-map-marker"></i></button>
+                <input type='text' class="search_input" placeholder="Ville,Pays">
+                <input type="submit" class="search_validation" />
+            </form>
+
+            <div class="filters"></div>
+            <div class="research__result"></div>
+        </section>
     </main>
 
     <footer class="l-footer">
