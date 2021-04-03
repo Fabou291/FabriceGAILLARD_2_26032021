@@ -47,25 +47,31 @@ table {
 	border-spacing: 0;
 }
 
-/* Base __________- */
-*{ 
-    box-sizing: border-box;
- }
-
+/* Base __________ */
 @font-face {
     font-family: 'Raleway-medium';
     src: url('fonts/Raleway-Medium.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'Raleway-semi-bold';
+    src: url('fonts/Raleway-SemiBold.ttf') format('truetype');
 }
 @font-face {
     font-family: 'Raleway-bold';
     src: url('fonts/Raleway-Bold.ttf') format('truetype');
 }
 
-a{
+
+* { 
+    box-sizing: border-box;
+ }
+
+
+a {
     text-decoration: none;
 }
 
-body{
+body {
     display : flex;
     min-height : 100vh;
     max-width: 1440px;
@@ -74,16 +80,33 @@ body{
     padding : 0 55px;
 
     font-family : 'Raleway-medium', Arial, Helvetica, sans-serif;
-    font-size : 1em;
-
+    font-size : 16px;
 }
 
-/* Layout ______- */
+h1{
+    padding-bottom : 16px;
+    font-size : 22px;
+    font-family: 'Raleway-bold', Arial, Helvetica, sans-serif;
+}
+
+input {
+    font-family : 'Raleway-medium', Arial, Helvetica, sans-serif;
+}
+
+button { 
+    cursor : pointer;
+}
+
+textarea:focus, input:focus, button:focus{
+    outline: none;
+}
+
+/* Layout ______ */
 
 .l-main { flex : 1; }
 .l-footer { height : 220px; }
 
-/* Module ____- */
+/* Module ______ */
 .header { 
     display:flex;
     align-items: center;
@@ -93,6 +116,8 @@ body{
     .header__menu { 
         display : flex; 
         margin-right : -25px;
+        
+        font-size : 16px;
     }
     .header__menu ul { display : flex; align-items:center; }
 
@@ -123,4 +148,132 @@ body{
         .header__btn__subsription:active { background-color : #0065fc; color : white; }
 
 
+/*------------SECTION RESEARCH---------------*/
+.search{
+    display : flex;
+    overflow: hidden; 
+    height : 51px;
+    width : 420px;
+    margin-top : 20px;
+}
 
+.search input{
+    font-size : 18px;
+}
+
+    .search_map {
+        min-width : 50px;
+        min-height : 50px;
+        padding : 0;
+
+        border : none;
+        border-radius : 13px 0 0 13px ; 
+        
+        background-color: #f2f2f2;
+
+        font-size : 16px;
+    }
+    .search_map:hover{ background-color: #ececec; }
+    .search_map:active{ background-color : #ececec; box-shadow: 0 0 6px inset rgba(0,0,0,0.3); }
+
+    .search_input{
+        display : inline;
+        padding : 0 17px;
+        width : 100%;
+
+        border : 1px solid #f2f2f2;
+        
+        font-family : 'Raleway-bold', Arial, Helvetica, sans-serif;
+    }
+
+    .search_validation{
+        min-width : 134px;
+        cursor : pointer;
+
+        color : white;
+
+        border : none;
+        border-radius : 0 13px 13px 0; 
+
+        background-color : #0065fc;
+
+        font-family : 'Raleway-semi-bold', Arial, Helvetica, sans-serif;   
+    }
+    .search_validation:hover{ background-color : #1c77ff; }
+    .search_validation:active{ background-color : #1c77ff; box-shadow: 0 0 6px inset rgba(0,0,0,0.5); }
+
+
+
+
+
+.filter{
+    margin-top : 30px;
+    display : flex;
+    align-items: center;
+    font-family : 'Raleway-bold', Arial, Helvetica, sans-serif;
+    font-size : 16px;
+}
+
+.btn-filter {
+    display : flex;
+    align-items : center;
+    height: 50px;
+    padding : 0;
+    border-radius : 30px;
+    margin-left : 25px;
+    
+    background-color: transparent;
+
+    border : 2px solid #d9d9d9;
+
+    font-family : inherit;
+    font-size : inherit;
+
+}
+.btn-filter:focus{  background-color : #f2f2f2;  border-color : transparent }
+.btn-filter:focus .btn-filter__icon { background-color : #0065fc; color : #deebff; }
+
+    .btn-filter__icon{
+        display : flex;
+        justify-content: center;
+        align-items: center;
+        min-width: 50px;
+        min-height: 50px;
+        border-radius : 30px;
+        position: relative;
+        left : -2px;
+
+        background-color : #deebff;
+
+        color : #0065fc;
+    }
+
+    .btn-filter__caption{
+        padding : 0 25px 0 15px;
+        white-space : nowrap;
+    }
+
+.research__result{
+    display : flex;
+    align-items: center;
+    margin-top: 35px;
+}
+    .icon-info{
+        display : flex;
+        justify-content: center;
+        align-items: center;
+        width : 24px;
+        height : 24px;
+
+        font-size : 12px;
+
+        color : #0065fc;
+
+        border : 2px solid #f2f2f2;
+        border-radius: 20px;
+    }
+    .research__result p {
+        margin-left : 12px;
+    }
+
+/*------------SECTION Hébergement---------------*/

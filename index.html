@@ -7,10 +7,10 @@
     <title>Reservia - Trouver votre hébergement pour des vacances de rêve</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/fontawesome-all.css">
-    <!--
-    <link rel="preload" href="css/fonts/Raleway-Medium.ttf" as="font" type="font/ttf" crossorigin>
-    <link rel="preload" href="css/fonts/Raleway-Bold.ttf" as="font" type="font/ttf" crossorigin>
-    -->
+    
+    <link rel="preload" href="css/style.css" as="style">
+
+    
 </head>
 <body>
 
@@ -31,13 +31,44 @@
             <p>En plein centre ville ou en pleine nature</p>
 
             <form method="POST" action="" class="search">
-                <button class="search_map"><i class="fas fa-map-marker"></i></button>
-                <input type='text' class="search_input" placeholder="Ville,Pays">
-                <input type="submit" class="search_validation" />
+                <button type="button" class="search_map"><span class="fas fa-map-marker-alt"></span></button>
+                <input type='text' class="search_input" placeholder="Dans quelle ville ?" value="Marseille, France">
+                <input type="submit" class="search_validation" value="Rechercher" />
             </form>
 
-            <div class="filters"></div>
-            <div class="research__result"></div>
+            <div class="filter">
+                <span>Filtres</span>
+                <button type="button" class="btn btn-filter">
+                    <div class="btn-filter__icon">
+                        <div class="fas fa-money-bill-wave"></div>
+                    </div>
+                    <p class="btn-filter__caption">Économique</p>
+                </button>
+                <button type="button" class="btn btn-filter">
+                    <div class="btn-filter__icon">
+                        <div class="fas fa-child"></div>
+                    </div>
+                    <p class="btn-filter__caption">Familial</p>
+                </button>
+                <button type="button" class="btn btn-filter">
+                    <div class="btn-filter__icon">
+                        <div class="fas fa-heart"></div>
+                    </div>
+                    <p class="btn-filter__caption">Romantique</p>
+                </button>
+                <button type="button" class="btn btn-filter">
+                    <div class="btn-filter__icon">
+                        <div class="fas fa-dog"></div>
+                    </div>
+                    <p class="btn-filter__caption">Animaux autorisés</p>
+                </button>
+            </div>
+            <div class="research__result">
+                <div class="icon-info">
+                    <div class="fas fa-info"></div>
+                </div>
+                <p>Plus de 500 logements sont disponibles dans cette ville</p>
+            </div>
         </section>
     </main>
 
