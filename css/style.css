@@ -66,11 +66,6 @@ table {
     box-sizing: border-box;
  }
 
-
-a {
-    text-decoration: none;
-}
-
 body {
     display : flex;
     min-height : 100vh;
@@ -84,11 +79,9 @@ body {
 }
 
 h1,h2,h3{ font-family: 'Raleway-bold', Arial, Helvetica, sans-serif; }
-h1,h2{
-    padding-bottom : 16px;
-    font-size : 22px;
-}
-
+h1,h2{ font-size : 22px; }
+h1{ padding-bottom : 16px; }
+h2{ padding-bottom : 25px; }
 
 
 input {
@@ -101,6 +94,15 @@ button {
 
 textarea:focus, input:focus, button:focus{
     outline: none;
+}
+
+a {
+    text-decoration: none;
+    color : inherit;
+}
+
+a:visited {
+    color : inherit;
 }
 
 /* Layout ______ */
@@ -215,6 +217,7 @@ textarea:focus, input:focus, button:focus{
 .filter{
     margin-top : 30px;
     display : flex;
+    flex-wrap: wrap;
     align-items: center;
     font-family : 'Raleway-bold', Arial, Helvetica, sans-serif;
     font-size : 16px;
@@ -226,7 +229,7 @@ textarea:focus, input:focus, button:focus{
     height: 50px;
     padding : 0;
     border-radius : 30px;
-    margin-left : 25px;
+    margin : 12px 25px 12px 0;
     
     background-color: transparent;
 
@@ -287,36 +290,61 @@ textarea:focus, input:focus, button:focus{
 .logement-container{
      
 }
-    .related-logement{
+    .related-logement {
         padding : 40px;
 
         border-radius : 20px;
 
         background-color : #f2f2f2;
     }
-    .related-logement__row{
+    .related-logement__row {
         display : flex;
         justify-content: space-between;
+        margin-bottom : 29px;
+    }
+    .related-logement__see-more {
+        margin-top : 25px;
+        font-size : 18px;
+        border : 1px solid red;
+        font-family: 'Raleway-bold', Arial, Helvetica, sans-serif;
     }
 
-        .card-home{
-            overflow : hidden;
-            border-radius : 15px;
-            border : 5px solid white;
 
+        .card-home{
+            position : relative;
+            overflow : hidden;
+            border-radius : 20px;
+            border : 5px solid white;
+            width : 100%;
 
             background-color : white;
             margin-right : 30px;
-            margin-bottom : 30px;
-
+        }
+        .card-home a::after{
+            position: absolute;
+            top: -5px;
+            right: -5px;
+            bottom: -5px;
+            left: -5px;
+            z-index: 1;
+            pointer-events: auto;
+            content: "";
+            background-color: transparent;
         }
     .related-logement__row .card-home:nth-child(3n){ margin-right : 0; }
 
-        .card-home__thumbnail img { width : 100%; }
-        .card-home__caption { margin : 10px; }
+        .card-home__thumbnail { display:block; margin-bottom : -2px; }
+        .card-home__thumbnail img {
+             height:114px;
+             width : 100%;
+             object-fit: cover; 
+             object-position: 50% 50%; 
+        }
+        .card-home__caption { margin : 10px 11px 5px 11px; }
         .card-home__title { 
-            padding-bottom : 14px;
+            padding-bottom : 8px;
             font-size : 16px;
         }
-        .card-home__price-by-night{ margin-bottom : 10px; }
+        .card-home__price-by-night{ font-size : 13.5px; margin-bottom : 7px; letter-spacing : 0.1px; }
         .card-home__price-by-night strong { font-family : 'Raleway-semi-bold', Arial, Helvetica, sans-serif; }
+        .card-home__stars{ font-size : 12px; letter-spacing: -1.3px; }
