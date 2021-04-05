@@ -66,13 +66,15 @@ table {
     box-sizing: border-box;
  }
 
+ :root{
+     --blue : #0065fc;
+     --grey : #f2f2f2;
+ }
+
 body {
     display : flex;
     min-height : 100vh;
-    max-width: 1440px;
     flex-direction : column;
-    margin : auto;
-    padding : 0 50px;
 
     font-family : 'Raleway-medium', Arial, Helvetica, sans-serif;
     font-size : 16px;
@@ -106,18 +108,26 @@ a:visited {
 }
 
 /* Layout ______ */
-
+.l-header, .l-main{  
+    padding : 0 50px;
+    width : 100%;
+    max-width: 1440px;
+    margin : auto;
+}
 .l-main { flex : 1; }
-.l-footer { height : 220px; }
+.l-footer { 
+    padding : 50px;
+    height : 220px;
+    background-color : var(--grey)
+}
 
-.blue { color : #0065fc; }
 
-.grey { color : #d9d9d9;  }
 
 /* Module ______ */
 .header { 
     display:flex;
     align-items: center;
+
     justify-content: space-between;
 }
     
@@ -139,21 +149,21 @@ a:visited {
                 border-top : 2px solid transparent; 
             }
             .header__menu__item:visited { color : inherit; }
-            .header__menu__item:hover { color : #0065fc;  }
-            .header__menu__item:focus { color : #0065fc; border-color : #0065fc; }
+            .header__menu__item:hover { color : var(--blue);  }
+            .header__menu__item:focus { color : var(--blue); border-color : var(--blue); }
 
         .header__btn__subsription { 
             display : block;
-            color : #0065fc; 
+            color : var(--blue); 
             font-weight : bold; 
             border : 2px solid transparent;
             border-radius : 30px;
             padding : 10px 25px;
             margin-left : 30px; 
         }
-        .header__btn__subsription:hover { border : 2px solid #0065fc; }
-        .header__btn__subsription:visited { color : #0065fc; }
-        .header__btn__subsription:active { background-color : #0065fc; color : white; }
+        .header__btn__subsription:hover { border : 2px solid var(--blue); }
+        .header__btn__subsription:visited { color : var(--blue); }
+        .header__btn__subsription:active { background-color : var(--blue); color : white; }
 
 
 /*------------SECTION RESEARCH---------------*/
@@ -177,7 +187,7 @@ a:visited {
         border : none;
         border-radius : 13px 0 0 13px ; 
         
-        background-color: #f2f2f2;
+        background-color: var(--grey);
 
         font-size : 16px;
     }
@@ -189,7 +199,7 @@ a:visited {
         padding : 0 17px;
         width : 100%;
 
-        border : 1px solid #f2f2f2;
+        border : 1px solid var(--grey);
         
         font-family : 'Raleway-bold', Arial, Helvetica, sans-serif;
     }
@@ -203,7 +213,7 @@ a:visited {
         border : none;
         border-radius : 0 13px 13px 0; 
 
-        background-color : #0065fc;
+        background-color : var(--blue);
 
         font-family : 'Raleway-semi-bold', Arial, Helvetica, sans-serif;   
     }
@@ -223,6 +233,10 @@ a:visited {
     font-size : 16px;
 }
 
+.filter__title{
+    
+}
+
 .btn-filter {
     display : flex;
     align-items : center;
@@ -233,14 +247,14 @@ a:visited {
     
     background-color: transparent;
 
-    border : 2px solid #d9d9d9;
+    border : 2px solid var(--grey);
 
     font-family : inherit;
     font-size : inherit;
 
 }
-.btn-filter:focus {  background-color : #f2f2f2;  border-color : transparent }
-.btn-filter:focus .btn-filter__icon { background-color : #0065fc; color : #deebff; }
+.btn-filter:focus {  background-color : var(--grey);  border-color : transparent }
+.btn-filter:focus .btn-filter__icon { background-color : var(--blue); color : #deebff; }
 
     .btn-filter__icon {
         display : flex;
@@ -254,7 +268,7 @@ a:visited {
 
         background-color : #deebff;
 
-        color : #0065fc;
+        color : var(--blue);
     }
 
     .btn-filter__caption {
@@ -276,9 +290,9 @@ a:visited {
 
         font-size : 12px;
 
-        color : #0065fc;
+        color : var(--blue);
 
-        border : 2px solid #f2f2f2;
+        border : 2px solid var(--grey);
         border-radius: 20px;
     }
     .research__result p {
@@ -289,6 +303,7 @@ a:visited {
 
 .logement-container {
      display : flex;
+     margin-bottom: 60px;
 }
 .logement-container section {
     width : 100%;
@@ -298,7 +313,7 @@ a:visited {
 
         border-radius : 20px;
 
-        background-color : #f2f2f2;
+        background-color : var(--grey);
     }
     .popular-logement { flex-shrink: 2; }
 
@@ -386,15 +401,69 @@ a:visited {
 
 /* --- */
 
-    .popular-logement { 
-        margin-left : 40px;  
-    }
-        .popular-logement__title {
-            display: flex;
-            justify-content: space-between;
-        }
-        .popular-logement .card:nth-child(n+4){ margin : 0; }
+/* card-activity design --- */
 
+.card-activity { display : block; height : 100%;  }
+
+    .card-activity img { height : calc(100% - 60px); width : 100%; }
+
+    .card-activity .card__title { padding : 20px; }
+
+
+/* --- */
+
+.popular-logement { 
+    margin-left : 40px;  
+}
+    .popular-logement__title {
+        display: flex;
+        justify-content: space-between;
+    }
+    .popular-logement .card:nth-child(n+4){ margin : 0; }
+
+
+
+.card-container { 
+    display : flex;
+    height : 446px; 
+}
+.card-container__column {
+    display : flex;
+    flex-direction: column;
+    width : 100%;
+    height : 100%;
+}
+.activity-related { margin-bottom: 60px; }
+.activity-related .card-container__column:nth-child(-n+3) { margin-right : 43px; }
+.activity-related .card-container__column:nth-child(2) .card:last-child { flex-shrink : 1.5; margin-top : 43px; }
+.activity-related .card-container__column:nth-child(4) .card:last-child { margin-top : 43px; }
+
+
+
+
+/** footer **/
+
+.legal-mention__container {
+    display : flex;
+    justify-content: flex-start;
+    padding : 0 50px;
+    max-width: 1440px;
+    margin : auto;
+}
+
+.legal-mention {
+    width : 100%;
+}
+    .legal-mention__title {
+        display : block;
+        margin-bottom : 23px;
+        font-size : 18px;
+        font-family: 'Raleway-bold', Arial, Helvetica, sans-serif;
+    }
+
+    .legal-mention__list li{
+        margin-bottom : 15px;
+    }
 
 
         
