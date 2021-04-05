@@ -66,13 +66,15 @@ table {
     box-sizing: border-box;
  }
 
- :root{
-     --blue : #0065fc;
-     --grey : #f2f2f2;
- }
+:root{
+    --blue : #0065fc;
+    --grey : #f2f2f2;
+}
 
- .blue { color : var(--blue); }
- .grey { color : var(--grey); }
+.blue { color : var(--blue); }
+.grey { color : var(--grey); }
+
+html, body { scroll-behavior: smooth; }
 
 body {
     display : flex;
@@ -81,6 +83,7 @@ body {
 
     font-family : 'Raleway-medium', Arial, Helvetica, sans-serif;
     font-size : 16px;
+
 }
 
 h1,h2,h3 { font-family: 'Raleway-bold', Arial, Helvetica, sans-serif; }
@@ -150,10 +153,10 @@ a:visited {
                 margin-left : 30px; 
                 
                 border-top : 2px solid transparent; 
+                cursor : pointer;
             }
             .header__menu__item:visited { color : inherit; }
-            .header__menu__item:hover { color : var(--blue);  }
-            .header__menu__item:focus { color : var(--blue); border-color : var(--blue); }
+            .header__menu__item:hover { color : var(--blue); border-color : var(--blue);  }
 
         .header__btn__subsription { 
             display : block;
@@ -163,6 +166,7 @@ a:visited {
             border-radius : 30px;
             padding : 10px 25px;
             margin-left : 30px; 
+            cursor : pointer;
         }
         .header__btn__subsription:hover { border : 2px solid var(--blue); }
         .header__btn__subsription:visited { color : var(--blue); }
@@ -221,7 +225,7 @@ a:visited {
         font-family : 'Raleway-semi-bold', Arial, Helvetica, sans-serif;   
     }
     .search_validation:hover { background-color : #1c77ff; }
-    .search_validation:active { background-color : #1c77ff; box-shadow: 0 0 6px inset rgba(0,0,0,0.5); }
+    .search_validation:active { background-color : #1c77ff; box-shadow: 0 0 6px inset rgba(0,0,0,0.6); }
 
 
 
@@ -339,7 +343,6 @@ a:visited {
     .related-logement__see-more {
         margin-top : 25px;
         font-size : 18px;
-        border : 1px solid red;
         font-family: 'Raleway-bold', Arial, Helvetica, sans-serif;
     }
 
@@ -449,7 +452,7 @@ a:visited {
     width : 22.53%;
     height : 100%;
 }
-.activity-related
+
 .activity-related { margin-bottom: 60px; }
 .activity-related .card-container__column:nth-child(2) .card:last-child { flex-shrink : 1.5; margin-top : 43px; }
 .activity-related .card-container__column:nth-child(4) .card:last-child { margin-top : 43px; }
@@ -487,3 +490,25 @@ a:visited {
 
 
         
+/* media queries */
+
+@media screen and (max-width: 900px){
+    /* header --- */
+    .l-header{ padding : 24px 0px 0 0px; }
+    .header{ flex-wrap: wrap;  }
+    .header__menu { width : 100%; order: 1; margin : 0 0 33px 0;}
+    .header__menu__item{
+        width : 50%; 
+        text-align : center; 
+        padding : 27px 0 14px 0 ; 
+        margin : 0; 
+        border-top: none; 
+        border-bottom : 3px solid var(--grey); 
+    }
+    .header__logo { margin-left : 20px; }
+    .header__btn__subsription { margin-left : auto; padding : 0; margin-right : 20px; }
+    /* ---- */
+
+
+
+}
