@@ -354,7 +354,7 @@ a:visited {
 
         background-color : var(--grey);
     }
-    .popular-logement { flex-shrink: 2; }
+
 
     .related-logement__card-container {
         display : flex;
@@ -378,7 +378,7 @@ a:visited {
         width : 100%;  
         box-shadow: 0px 0px 10px rgba(0,0,0,0.2);
         display : flex; 
-        transition: all 100ms;     
+        transition: transform 100ms;     
     }
 
     .card:hover{
@@ -404,9 +404,13 @@ a:visited {
         }
 
         .card__title { 
+
             padding-bottom : 6px;
+
             line-height: 20px;
             font-size : 16px;
+
+
         }
 
         .card__thumbnail { margin-bottom : -2px; }
@@ -465,14 +469,13 @@ a:visited {
 
     
 
-
+.activity-related{ margin : 0 0 61px 0;}
 .activity-related__card-container{
     display : grid;
  
     grid-template-columns : repeat(4, 1fr);
     grid-template-rows : 194px 44px 44px 164px;
     grid-column-gap : 3.134%;
-    margin-bottom : 61px;
 }
 .activity-related__card-container .card-activity:nth-child(1){ grid-row : 1/5; }
 .activity-related__card-container .card-activity:nth-child(2){ grid-row : 1/3; }
@@ -500,7 +503,10 @@ a:visited {
 
 .legal-mention {
     width : 100%;
+    padding-right : 40px;
 }
+.legal-mention__container .legal-mention:last-child{  padding-right : 0; }
+
     .legal-mention__title {
         display : block;
         margin-bottom : 23px;
@@ -519,8 +525,22 @@ a:visited {
 
         
 /* media queries */
+@media screen and (max-width : 1199px) {
+    .logement-container { flex-direction : column; }
+        .related-logement, .popular-logement { width : 100%;  }
+        .popular-logement { margin-bottom: 40px;  }
+        .related-logement { order : 1;  }
 
-@media screen and (max-width: 900px){
+    .popular-logement__card-container { display : flex; justify-content: space-between;  }
+
+
+    .h-card-home { width : 30.75% }
+
+    .h-card-home { flex-direction: column;  margin-bottom : 31px; height : auto; }
+    .h-card-home img { height: 114px; width : 100%; max-width: none; }
+}
+
+@media screen and (max-width : 991px) {
     /* header --- */
     .l-header { padding : 27px 0px 31px 0px;   }
     .header { flex-wrap: wrap; margin : 0; }
@@ -540,6 +560,11 @@ a:visited {
     .header__btn__subscribtion:hover {  border-color : transparent; text-decoration: underline; }
     .header__btn__subscribtion:active {  background-color : transparent; color : black; }
     /* ---- */
+        
+}
+
+@media screen and (max-width: 768px) {
+
 
     /* main --- */
     .l-main { padding : 0 ; }
@@ -569,17 +594,23 @@ a:visited {
     .research__result{ margin: 18px 0 37px 0; }
     
     .logement-container { flex-direction : column;  margin : 0px;}
-        .related-logement, .popular-logement { width : 100%; border-radius: 0; padding : 36px 20px ; }
+        .related-logement, .popular-logement { width : 100%; border-radius: 0; padding : 36px 20px ; margin : 0; }
         .related-logement { order : 1; background-color : transparent; padding: 36px 20px 0 20px; }
 
+        .popular-logement__card-container { display : block;  }
+
+        
             .v-card-home{ width : 100%; margin: 0 0 12px 0; }
-            .h-card-home{ margin: 0 0 11px 0; }
+
+            .h-card-home { flex-direction: row; margin-bottom : 33px; height : 144px; }
+            .h-card-home img { height: 100%;; max-width : 127px; }
+            .h-card-home{ margin: 0 0 11px 0; width : auto; }
 
         h2 { padding : 4px 0 28px 0; }
 
         .related-logement__see-more { margin: 20px 0 0 0; }
 
-        .activity-related{ margin : 0 20px; padding : 36px 0 0 0; }
+        .activity-related{ margin : 0 20px 25px 20px; padding : 36px 0 0 0; }
             .activity-related__card-container { 
                 display : flex;
                 flex-wrap: wrap;
@@ -592,13 +623,16 @@ a:visited {
 
 
     /* footer --- */
-    .l-footer{ height : auto; padding :  28px; }
+    .l-footer{ height : auto; padding : 48px 28px 28px 28px; }
 
     .legal-mention__container{
         flex-direction: column;
         padding : 0;
     }
+    
     .legal-mention { margin : 0 0 28px 0; }
+    .legal-mention__container .legal-mention:nth-child(3){ margin : 0; }
     
 
 }
+
