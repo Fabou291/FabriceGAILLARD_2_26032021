@@ -23,48 +23,68 @@
                         <li class="header__menu__item" ><a href="#activity" >Activités</a></li>
                     </ul>
                 </nav> 
-                <div class="header__btn__subsription"><a href="#"  >S'inscrire</a></div>        
+                <div class="header__btn__subscribtion"><a href="#"  >S'inscrire</a></div>        
             </div>
             
         </header>
 
         <main class="l-main">
             <section class="research">
-                <h1>Trouvez votre hébergement pour des vacances de rêves</h1>
+                <h1>Trouvez votre hébergement pour des vacances de rêve</h1>
                 <p>En plein centre ville ou en pleine nature</p>
 
-                <form method="POST" action="#" class="search">
-                    <button type="button" class="search_map"><span class="fas fa-map-marker-alt"></span></button>
-                    <input type='text' class="search_input" placeholder="Dans quelle ville ?" value="Marseille, France">
-                    <input type="submit" class="search_validation" value="Rechercher" />
+                <form method="POST" action="pageDeTraitement.php">
+                    <div  class="search">
+                        <button type="button" class="search_map"><span class="fas fa-map-marker-alt"></span></button>
+                        <input type='text' class="search_input" placeholder="Dans quelle ville ?" value="Marseille, France">
+                        <button type="button" class="search__validation" >
+                            <span class="search__validation__text">Rechercher</span>
+                            <span class="search__validation__icon">
+                                <i class="fa fa-search" aria-hidden="true"></i>
+                            </span>
+                        </button>
+                    </div>
+    
+                    <div class="filter">
+                        <span class="filter__title" >Filtres</span>
+                        <div class="filter__btn-container">
+                            <div>
+                                <input type="checkbox" name="eco" id="eco">
+                                <label class="btn btn-filter" for="eco" >
+                                    <span class="fas fa-money-bill-wave btn-filter__icon"></span>
+                                    <span class="btn-filter__caption">Économique</span>
+                                </label>                            
+                            </div>
+    
+                            <div>
+                                <input type="checkbox" name="family" id="family">
+                                <label class="btn btn-filter" for="family" >
+                                    <span class="fas fa-child btn-filter__icon"></span>
+                                    <span class="btn-filter__caption">Familial</span>
+                                </label>
+                            </div>
+    
+                            <div>
+                                <input type="checkbox" name="romantic" id="romantic">
+                                <label class="btn btn-filter" for="romantic" >
+                                    <span class="fas fa-heart btn-filter__icon"></span>
+                                    <span class="btn-filter__caption">Romantique</span>
+                                </label>
+                            </div>
+    
+                            <div>
+                                <input type="checkbox" name="pet" id="pet">
+                                <label class="btn btn-filter" for="pet" >
+                                    <span class="fas fa-dog btn-filter__icon"></span>
+                                    <span class="btn-filter__caption">Animaux autorisés</span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
                 </form>
 
-                <div class="filter">
-                    <span class="filter__title" >Filtres</span>
-                    <div class="filter__btn-container">
-                        <button class="btn btn-filter">
-                            <span class="fas fa-money-bill-wave btn-filter__icon"></span>
-                            <span class="btn-filter__caption">Économique</span>
-                        </button>
-                        <button class="btn btn-filter">
-                            <span class="fas fa-child btn-filter__icon"></span>
-                            <p class="btn-filter__caption">Familial</p>
-                        </button>
-                        <button class="btn btn-filter">
-                            <span class="fas fa-heart btn-filter__icon"></span>
-                            <p class="btn-filter__caption">Romantique</p>
-                        </button>
-                        <button class="btn btn-filter">
-                            <span class="fas fa-dog btn-filter__icon"></span>
-                            <p class="btn-filter__caption">Animaux autorisés</p>
-                        </button>
-                    </div>
-                </div>
                 <div class="research__result">
-                    <div class="icon-info">
-                        <div class="fas fa-info"></div>
-                    </div>
-                    <p>Plus de 500 logements sont disponibles dans cette ville</p>
+                    <p><i class="fas fa-info icon-info"></i>Plus de 500 logements sont disponibles dans cette ville</p>
                 </div>
             </section>
 
@@ -208,7 +228,7 @@
                             <img src="css/hebergements/4_small/marcus-loke-WQJvWU_HZFo-unsplash.jpg" alt="Chris debout tenant sa fille Elva dans ses bras">
                         </picture>
                         <div class="card__caption">
-                            <h3 class="card__title"><a href="#">Hôtel Le soleile du matin</a></h3>
+                            <h3 class="card__title"><a href="#">Hôtel Le soleil du matin</a></h3>
                             <div class="card__price-by-night">
                                 <span>Nuit à partir de <strong>25€</strong></span>
                             </div>
@@ -330,7 +350,7 @@
 
     <footer class="l-footer">
         <div class="legal-mention__container">
-            <section class="legal-mention">
+            <div class="legal-mention">
                 <span class="legal-mention__title">A propos</span>
                 <ul class="legal-mention__list">
                     <li>
@@ -343,8 +363,8 @@
                         <a href="#">Données et confidentialité</a>
                     </li>
                 </ul>
-            </section>
-            <section class="legal-mention">
+            </div>
+            <div class="legal-mention">
                 <span class="legal-mention__title">Nos hébergements</span>
                 <ul class="legal-mention__list">
                     <li>
@@ -354,9 +374,9 @@
                         <a href="#">Soumettre votre hôtel</a>
                     </li>
                 </ul>
-            </section>
-            <section class="legal-mention">
-                <span class="legal-mention__title">A propos</span>
+            </div>
+            <div class="legal-mention">
+                <span class="legal-mention__title">Assistance</span>
                 <ul class="legal-mention__list">
                     <li>
                         <a href="#">Centre d'aide</a>
@@ -365,7 +385,7 @@
                         <a href="#">Nous contacter</a>
                     </li>
                 </ul>
-            </section>
+            </div>
         </div>            
     </footer>
 
