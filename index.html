@@ -5,351 +5,364 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Reservia - Trouver votre hébergement pour des vacances de rêve</title>
+    <meta name="description" content="Planifiez vos vacances, trouvez des hébergements et des activités dans la ville que vous souhaitez en toute simplicité !">
+
+    <!-- Twitter Card data -->
+    <meta name="twitter:card" content="Planifiez vos vacances, trouvez des hébergements et des activités dans la ville que vous souhaitez en toute simplicité !">
+
+    <!-- Open Graph data -->
+    <meta property="og:title" content="Reservia - Trouver votre hébergement pour des vacances de rêve"/>
+    <meta property="og:type" content="website"/>
+    <meta property="og:url" content="https://fabou291.github.io/FabriceGAILLARD_2_26032021/"/>
+    <meta property="og:image" content="https://fabou291.github.io/FabriceGAILLARD_2_26032021/css/logo/Reservia3x.png"/>
+    <meta property="og:description" content="Planifiez vos vacances, trouvez des hébergements et des activités dans la ville que vous souhaitez en toute simplicité !"/>
+
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/fontawesome-all.css">
-    
+    <link rel="preload" href="css/fontawesome-all.css" as="style">
     <link rel="preload" href="css/style.css" as="style">
 
     
+
 </head>
 <body>
     
-        <header class="l-header">
-            <div class='header'>
-                <a href="#"><img class='header__logo' src="css/logo/Reservia.svg" alt="logo reversia"></a>
-                <nav class="header__menu">
-                    <ul>
-                        <li class="header__menu__item" ><a href="#logement" >Hébergements</a></li>
-                        <li class="header__menu__item" ><a href="#activity" >Activités</a></li>
-                    </ul>
-                </nav> 
-                <div class="header__btn__subscribtion"><a href="#"  >S'inscrire</a></div>        
+    <header class="l-header">
+        <div class='header'>
+            <a href="#"><img class='header__logo' src="css/logo/Reservia.svg" alt="logo reversia"></a>
+            <nav class="header__menu">
+                <ul>
+                    <li class="header__menu__item" ><a href="#logement" >Hébergements</a></li>
+                    <li class="header__menu__item" ><a href="#activity" >Activités</a></li>
+                </ul>
+            </nav> 
+            <div class="header__btn__subscribtion"><a href="#"  >S'inscrire</a></div>        
+        </div>
+        
+    </header>
+
+    <main class="l-main">
+        <section class="research">
+            <h1>Trouvez votre hébergement pour des vacances de rêve</h1>
+            <p>En plein centre ville ou en pleine nature</p>
+
+            <form method="POST" action="pageDeTraitement.php">
+                <div  class="search">
+                    <button type="button" class="search_map"><span class="fas fa-map-marker-alt"></span></button>
+                    <input type='text' class="search_input" placeholder="Dans quelle ville ?" value="Marseille, France">
+                    <button type="button" class="search__validation" >
+                        <span class="search__validation__text">Rechercher</span>
+                        <span class="search__validation__icon">
+                            <i class="fa fa-search" aria-hidden="true"></i>
+                        </span>
+                    </button>
+                </div>
+
+                <div class="filter">
+                    <span class="filter__title" >Filtres</span>
+                    <div class="filter__btn-container">
+                        <div>
+                            <input type="checkbox" name="eco" id="eco">
+                            <label class="btn btn-filter" for="eco" >
+                                <span class="fas fa-money-bill-wave btn-filter__icon"></span>
+                                <span class="btn-filter__caption">Économique</span>
+                            </label>                            
+                        </div>
+
+                        <div>
+                            <input type="checkbox" name="family" id="family">
+                            <label class="btn btn-filter" for="family" >
+                                <span class="fas fa-child btn-filter__icon"></span>
+                                <span class="btn-filter__caption">Familial</span>
+                            </label>
+                        </div>
+
+                        <div>
+                            <input type="checkbox" name="romantic" id="romantic">
+                            <label class="btn btn-filter" for="romantic" >
+                                <span class="fas fa-heart btn-filter__icon"></span>
+                                <span class="btn-filter__caption">Romantique</span>
+                            </label>
+                        </div>
+
+                        <div>
+                            <input type="checkbox" name="pet" id="pet">
+                            <label class="btn btn-filter" for="pet" >
+                                <span class="fas fa-dog btn-filter__icon"></span>
+                                <span class="btn-filter__caption">Animaux autorisés</span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </form>
+
+            <div class="research__result">
+                <p><i class="fas fa-info icon-info"></i>Plus de 500 logements sont disponibles dans cette ville</p>
             </div>
+        </section>
+
+        <div class="logement-container" id="logement">
             
-        </header>
-
-        <main class="l-main">
-            <section class="research">
-                <h1>Trouvez votre hébergement pour des vacances de rêve</h1>
-                <p>En plein centre ville ou en pleine nature</p>
-
-                <form method="POST" action="pageDeTraitement.php">
-                    <div  class="search">
-                        <button type="button" class="search_map"><span class="fas fa-map-marker-alt"></span></button>
-                        <input type='text' class="search_input" placeholder="Dans quelle ville ?" value="Marseille, France">
-                        <button type="button" class="search__validation" >
-                            <span class="search__validation__text">Rechercher</span>
-                            <span class="search__validation__icon">
-                                <i class="fa fa-search" aria-hidden="true"></i>
-                            </span>
-                        </button>
-                    </div>
-    
-                    <div class="filter">
-                        <span class="filter__title" >Filtres</span>
-                        <div class="filter__btn-container">
-                            <div>
-                                <input type="checkbox" name="eco" id="eco">
-                                <label class="btn btn-filter" for="eco" >
-                                    <span class="fas fa-money-bill-wave btn-filter__icon"></span>
-                                    <span class="btn-filter__caption">Économique</span>
-                                </label>                            
+            <section class="related-logement"  >
+                <h2 class="related-logement__title">Hébergements à Marseille</h2>
+                <div class="related-logement__card-container">
+                    <div class="card v-card-home" >
+                        <picture class="card__thumbnail">
+                            <!--<source media="(max-width: 768px)" srcset="css/hebergements/3_medium/marcus-loke-WQJvWU_HZFo-unsplash.jpg">-->
+                            <img src="css/hebergements/4_small/marcus-loke-WQJvWU_HZFo-unsplash.jpg" alt="Chris debout tenant sa fille Elva dans ses bras">
+                        </picture>
+                        <div class="card__caption">
+                            <h3 class="card__title"><a href="#">Auberge la Cannebière</a></h3>
+                            <div class="card__price-by-night">
+                                <span>Nuit à partir de <strong>25€</strong></span>
                             </div>
-    
-                            <div>
-                                <input type="checkbox" name="family" id="family">
-                                <label class="btn btn-filter" for="family" >
-                                    <span class="fas fa-child btn-filter__icon"></span>
-                                    <span class="btn-filter__caption">Familial</span>
-                                </label>
-                            </div>
-    
-                            <div>
-                                <input type="checkbox" name="romantic" id="romantic">
-                                <label class="btn btn-filter" for="romantic" >
-                                    <span class="fas fa-heart btn-filter__icon"></span>
-                                    <span class="btn-filter__caption">Romantique</span>
-                                </label>
-                            </div>
-    
-                            <div>
-                                <input type="checkbox" name="pet" id="pet">
-                                <label class="btn btn-filter" for="pet" >
-                                    <span class="fas fa-dog btn-filter__icon"></span>
-                                    <span class="btn-filter__caption">Animaux autorisés</span>
-                                </label>
-                            </div>
+                            <span class="card__stars">
+                                <i class="fas fa-star blue"></i>
+                                <i class="fas fa-star blue"></i>
+                                <i class="fas fa-star blue"></i>
+                                <i class="fas fa-star blue"></i>
+                                <i class="fas fa-star grey"></i>
+                            </span>                            
                         </div>
-                    </div>
-                </form>
 
-                <div class="research__result">
-                    <p><i class="fas fa-info icon-info"></i>Plus de 500 logements sont disponibles dans cette ville</p>
+                    </div>
+                    <div class="card v-card-home" >
+                        <picture class="card__thumbnail">
+                            <!--<source media="(max-width: 768px)" srcset="css/hebergements/3_medium/marcus-loke-WQJvWU_HZFo-unsplash.jpg">-->
+                            <img src="css/hebergements/4_small/marcus-loke-WQJvWU_HZFo-unsplash.jpg" alt="Chris debout tenant sa fille Elva dans ses bras">
+                        </picture>
+                        <div class="card__caption">
+                            <h3 class="card__title"><a href="#">Auberge la Cannebière</a></h3>
+                            <div class="card__price-by-night">
+                                <span>Nuit à partir de <strong>25€</strong></span>
+                            </div>
+                            <span class="card__stars">
+                                <i class="fas fa-star blue"></i>
+                                <i class="fas fa-star blue"></i>
+                                <i class="fas fa-star blue"></i>
+                                <i class="fas fa-star blue"></i>
+                                <i class="fas fa-star grey"></i>
+                            </span>                            
+                        </div>
+
+                    </div>
+                    <div class="card v-card-home" >
+                        <picture class="card__thumbnail">
+                            <!--<source media="(max-width: 768px)" srcset="css/hebergements/3_medium/marcus-loke-WQJvWU_HZFo-unsplash.jpg">-->
+                            <img src="css/hebergements/4_small/marcus-loke-WQJvWU_HZFo-unsplash.jpg" alt="Chris debout tenant sa fille Elva dans ses bras">
+                        </picture>
+                        <div class="card__caption">
+                            <h3 class="card__title"><a href="#">Auberge la Cannebière</a></h3>
+                            <div class="card__price-by-night">
+                                <span>Nuit à partir de <strong>25€</strong></span>
+                            </div>
+                            <span class="card__stars">
+                                <i class="fas fa-star blue"></i>
+                                <i class="fas fa-star blue"></i>
+                                <i class="fas fa-star blue"></i>
+                                <i class="fas fa-star blue"></i>
+                                <i class="fas fa-star grey"></i>
+                            </span>                            
+                        </div>
+
+                    </div>
+                    <div class="card v-card-home" >
+                        <picture class="card__thumbnail">
+                            <!--<source media="(max-width: 768px)" srcset="css/hebergements/3_medium/marcus-loke-WQJvWU_HZFo-unsplash.jpg">-->
+                            <img src="css/hebergements/4_small/marcus-loke-WQJvWU_HZFo-unsplash.jpg" alt="Chris debout tenant sa fille Elva dans ses bras">
+                        </picture>
+                        <div class="card__caption">
+                            <h3 class="card__title"><a href="#">Auberge la Cannebière</a></h3>
+                            <div class="card__price-by-night">
+                                <span>Nuit à partir de <strong>25€</strong></span>
+                            </div>
+                            <span class="card__stars">
+                                <i class="fas fa-star blue"></i>
+                                <i class="fas fa-star blue"></i>
+                                <i class="fas fa-star blue"></i>
+                                <i class="fas fa-star blue"></i>
+                                <i class="fas fa-star grey"></i>
+                            </span>                            
+                        </div>
+
+                    </div>
+                    <div class="card v-card-home" >
+                        <picture class="card__thumbnail">
+                            <!--<source media="(max-width: 768px)" srcset="css/hebergements/3_medium/marcus-loke-WQJvWU_HZFo-unsplash.jpg">-->
+                            <img src="css/hebergements/4_small/marcus-loke-WQJvWU_HZFo-unsplash.jpg" alt="Chris debout tenant sa fille Elva dans ses bras">
+                        </picture>
+                        <div class="card__caption">
+                            <h3 class="card__title"><a href="#">Auberge la Cannebière</a></h3>
+                            <div class="card__price-by-night">
+                                <span>Nuit à partir de <strong>25€</strong></span>
+                            </div>
+                            <span class="card__stars">
+                                <i class="fas fa-star blue"></i>
+                                <i class="fas fa-star blue"></i>
+                                <i class="fas fa-star blue"></i>
+                                <i class="fas fa-star blue"></i>
+                                <i class="fas fa-star grey"></i>
+                            </span>                            
+                        </div>
+
+                    </div>
+                    <div class="card v-card-home" >
+                        <picture class="card__thumbnail">
+                            <!--<source media="(max-width: 768px)" srcset="css/hebergements/3_medium/marcus-loke-WQJvWU_HZFo-unsplash.jpg">-->
+                            <img src="css/hebergements/4_small/marcus-loke-WQJvWU_HZFo-unsplash.jpg" alt="Chris debout tenant sa fille Elva dans ses bras">
+                        </picture>
+                        <div class="card__caption">
+                            <h3 class="card__title"><a href="#">Auberge la Cannebière</a></h3>
+                            <div class="card__price-by-night">
+                                <span>Nuit à partir de <strong>25€</strong></span>
+                            </div>
+                            <span class="card__stars">
+                                <i class="fas fa-star blue"></i>
+                                <i class="fas fa-star blue"></i>
+                                <i class="fas fa-star blue"></i>
+                                <i class="fas fa-star blue"></i>
+                                <i class="fas fa-star grey"></i>
+                            </span>                            
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class='related-logement__see-more'>
+                    <a href="#" >Afficher plus</a>
                 </div>
             </section>
 
-            <div class="logement-container" id="logement">
-                
-                <section class="related-logement"  >
-                    <h2 class="related-logement__title">Hébergements à Marseille</h2>
-                    <div class="related-logement__card-container">
-                        <div class="card v-card-home" >
-                            <picture class="card__thumbnail">
-                                <!--<source media="(max-width: 768px)" srcset="css/hebergements/3_medium/marcus-loke-WQJvWU_HZFo-unsplash.jpg">-->
-                                <img src="css/hebergements/4_small/marcus-loke-WQJvWU_HZFo-unsplash.jpg" alt="Chris debout tenant sa fille Elva dans ses bras">
-                            </picture>
-                            <div class="card__caption">
-                                <h3 class="card__title"><a href="#">Auberge la Cannebière</a></h3>
-                                <div class="card__price-by-night">
-                                    <span>Nuit à partir de <strong>25€</strong></span>
-                                </div>
-                                <span class="card__stars">
-                                    <i class="fas fa-star blue"></i>
-                                    <i class="fas fa-star blue"></i>
-                                    <i class="fas fa-star blue"></i>
-                                    <i class="fas fa-star blue"></i>
-                                    <i class="fas fa-star grey"></i>
-                                </span>                            
+            <section class="popular-logement">
+                <h2 class="popular-logement__title"><span>Les plus populaires</span> <i class="fas fa-chart-line"></i></h2>
+                <div class="popular-logement__card-container">
+                    <div class="card h-card-home" >
+                        <picture class="card__thumbnail">
+                            <!--<source media="(max-width: 768px)" srcset="css/hebergements/3_medium/marcus-loke-WQJvWU_HZFo-unsplash.jpg">-->
+                            <img src="css/hebergements/4_small/marcus-loke-WQJvWU_HZFo-unsplash.jpg" alt="Chris debout tenant sa fille Elva dans ses bras">
+                        </picture>
+                        <div class="card__caption">
+                            <h3 class="card__title"><a href="#">Hôtel Le soleil du matin</a></h3>
+                            <div class="card__price-by-night">
+                                <span>Nuit à partir de <strong>25€</strong></span>
                             </div>
-
+                            <span class="card__stars">
+                                <i class="fas fa-star blue"></i>
+                                <i class="fas fa-star blue"></i>
+                                <i class="fas fa-star blue"></i>
+                                <i class="fas fa-star blue"></i>
+                                <i class="fas fa-star grey"></i>
+                            </span>                            
                         </div>
-                        <div class="card v-card-home" >
-                            <picture class="card__thumbnail">
-                                <!--<source media="(max-width: 768px)" srcset="css/hebergements/3_medium/marcus-loke-WQJvWU_HZFo-unsplash.jpg">-->
-                                <img src="css/hebergements/4_small/marcus-loke-WQJvWU_HZFo-unsplash.jpg" alt="Chris debout tenant sa fille Elva dans ses bras">
-                            </picture>
-                            <div class="card__caption">
-                                <h3 class="card__title"><a href="#">Auberge la Cannebière</a></h3>
-                                <div class="card__price-by-night">
-                                    <span>Nuit à partir de <strong>25€</strong></span>
-                                </div>
-                                <span class="card__stars">
-                                    <i class="fas fa-star blue"></i>
-                                    <i class="fas fa-star blue"></i>
-                                    <i class="fas fa-star blue"></i>
-                                    <i class="fas fa-star blue"></i>
-                                    <i class="fas fa-star grey"></i>
-                                </span>                            
-                            </div>
 
-                        </div>
-                        <div class="card v-card-home" >
-                            <picture class="card__thumbnail">
-                                <!--<source media="(max-width: 768px)" srcset="css/hebergements/3_medium/marcus-loke-WQJvWU_HZFo-unsplash.jpg">-->
-                                <img src="css/hebergements/4_small/marcus-loke-WQJvWU_HZFo-unsplash.jpg" alt="Chris debout tenant sa fille Elva dans ses bras">
-                            </picture>
-                            <div class="card__caption">
-                                <h3 class="card__title"><a href="#">Auberge la Cannebière</a></h3>
-                                <div class="card__price-by-night">
-                                    <span>Nuit à partir de <strong>25€</strong></span>
-                                </div>
-                                <span class="card__stars">
-                                    <i class="fas fa-star blue"></i>
-                                    <i class="fas fa-star blue"></i>
-                                    <i class="fas fa-star blue"></i>
-                                    <i class="fas fa-star blue"></i>
-                                    <i class="fas fa-star grey"></i>
-                                </span>                            
-                            </div>
-
-                        </div>
-                        <div class="card v-card-home" >
-                            <picture class="card__thumbnail">
-                                <!--<source media="(max-width: 768px)" srcset="css/hebergements/3_medium/marcus-loke-WQJvWU_HZFo-unsplash.jpg">-->
-                                <img src="css/hebergements/4_small/marcus-loke-WQJvWU_HZFo-unsplash.jpg" alt="Chris debout tenant sa fille Elva dans ses bras">
-                            </picture>
-                            <div class="card__caption">
-                                <h3 class="card__title"><a href="#">Auberge la Cannebière</a></h3>
-                                <div class="card__price-by-night">
-                                    <span>Nuit à partir de <strong>25€</strong></span>
-                                </div>
-                                <span class="card__stars">
-                                    <i class="fas fa-star blue"></i>
-                                    <i class="fas fa-star blue"></i>
-                                    <i class="fas fa-star blue"></i>
-                                    <i class="fas fa-star blue"></i>
-                                    <i class="fas fa-star grey"></i>
-                                </span>                            
-                            </div>
-
-                        </div>
-                        <div class="card v-card-home" >
-                            <picture class="card__thumbnail">
-                                <!--<source media="(max-width: 768px)" srcset="css/hebergements/3_medium/marcus-loke-WQJvWU_HZFo-unsplash.jpg">-->
-                                <img src="css/hebergements/4_small/marcus-loke-WQJvWU_HZFo-unsplash.jpg" alt="Chris debout tenant sa fille Elva dans ses bras">
-                            </picture>
-                            <div class="card__caption">
-                                <h3 class="card__title"><a href="#">Auberge la Cannebière</a></h3>
-                                <div class="card__price-by-night">
-                                    <span>Nuit à partir de <strong>25€</strong></span>
-                                </div>
-                                <span class="card__stars">
-                                    <i class="fas fa-star blue"></i>
-                                    <i class="fas fa-star blue"></i>
-                                    <i class="fas fa-star blue"></i>
-                                    <i class="fas fa-star blue"></i>
-                                    <i class="fas fa-star grey"></i>
-                                </span>                            
-                            </div>
-
-                        </div>
-                        <div class="card v-card-home" >
-                            <picture class="card__thumbnail">
-                                <!--<source media="(max-width: 768px)" srcset="css/hebergements/3_medium/marcus-loke-WQJvWU_HZFo-unsplash.jpg">-->
-                                <img src="css/hebergements/4_small/marcus-loke-WQJvWU_HZFo-unsplash.jpg" alt="Chris debout tenant sa fille Elva dans ses bras">
-                            </picture>
-                            <div class="card__caption">
-                                <h3 class="card__title"><a href="#">Auberge la Cannebière</a></h3>
-                                <div class="card__price-by-night">
-                                    <span>Nuit à partir de <strong>25€</strong></span>
-                                </div>
-                                <span class="card__stars">
-                                    <i class="fas fa-star blue"></i>
-                                    <i class="fas fa-star blue"></i>
-                                    <i class="fas fa-star blue"></i>
-                                    <i class="fas fa-star blue"></i>
-                                    <i class="fas fa-star grey"></i>
-                                </span>                            
-                            </div>
-
-                        </div>
                     </div>
+                    <div class="card h-card-home" >
+                        <picture class="card__thumbnail">
+                            <!--<source media="(max-width: 768px)" srcset="css/hebergements/3_medium/marcus-loke-WQJvWU_HZFo-unsplash.jpg">-->
+                            <img src="css/hebergements/4_small/marcus-loke-WQJvWU_HZFo-unsplash.jpg" alt="Chris debout tenant sa fille Elva dans ses bras">
+                        </picture>
+                        <div class="card__caption">
+                            <h3 class="card__title"><a href="#">Auberge la Cannebière</a></h3>
+                            <div class="card__price-by-night">
+                                <span>Nuit à partir de <strong>25€</strong></span>
+                            </div>
+                            <span class="card__stars">
+                                <i class="fas fa-star blue"></i>
+                                <i class="fas fa-star blue"></i>
+                                <i class="fas fa-star blue"></i>
+                                <i class="fas fa-star blue"></i>
+                                <i class="fas fa-star grey"></i>
+                            </span>                            
+                        </div>
 
-                    <div class='related-logement__see-more'>
-                        <a href="#" >Afficher plus</a>
                     </div>
-                </section>
+                    <div class="card h-card-home" >
+                        <picture class="card__thumbnail">
+                            <!--<source media="(max-width: 768px)" srcset="css/hebergements/3_medium/marcus-loke-WQJvWU_HZFo-unsplash.jpg">-->
+                            <img src="css/hebergements/4_small/marcus-loke-WQJvWU_HZFo-unsplash.jpg" alt="Chris debout tenant sa fille Elva dans ses bras">
+                        </picture>
+                        <div class="card__caption">
+                            <h3 class="card__title"><a href="#">Auberge la Cannebière</a></h3>
+                            <div class="card__price-by-night">
+                                <span>Nuit à partir de <strong>25€</strong></span>
+                            </div>
+                            <span class="card__stars">
+                                <i class="fas fa-star blue"></i>
+                                <i class="fas fa-star blue"></i>
+                                <i class="fas fa-star blue"></i>
+                                <i class="fas fa-star blue"></i>
+                                <i class="fas fa-star grey"></i>
+                            </span>                            
+                        </div>
 
-                <section class="popular-logement">
-                    <h2 class="popular-logement__title"><span>Les plus populaires</span> <i class="fas fa-chart-line"></i></h2>
-                    <div class="popular-logement__card-container">
-                        <div class="card h-card-home" >
-                            <picture class="card__thumbnail">
-                                <!--<source media="(max-width: 768px)" srcset="css/hebergements/3_medium/marcus-loke-WQJvWU_HZFo-unsplash.jpg">-->
-                                <img src="css/hebergements/4_small/marcus-loke-WQJvWU_HZFo-unsplash.jpg" alt="Chris debout tenant sa fille Elva dans ses bras">
-                            </picture>
-                            <div class="card__caption">
-                                <h3 class="card__title"><a href="#">Hôtel Le soleil du matin</a></h3>
-                                <div class="card__price-by-night">
-                                    <span>Nuit à partir de <strong>25€</strong></span>
-                                </div>
-                                <span class="card__stars">
-                                    <i class="fas fa-star blue"></i>
-                                    <i class="fas fa-star blue"></i>
-                                    <i class="fas fa-star blue"></i>
-                                    <i class="fas fa-star blue"></i>
-                                    <i class="fas fa-star grey"></i>
-                                </span>                            
-                            </div>
-    
-                        </div>
-                        <div class="card h-card-home" >
-                            <picture class="card__thumbnail">
-                                <!--<source media="(max-width: 768px)" srcset="css/hebergements/3_medium/marcus-loke-WQJvWU_HZFo-unsplash.jpg">-->
-                                <img src="css/hebergements/4_small/marcus-loke-WQJvWU_HZFo-unsplash.jpg" alt="Chris debout tenant sa fille Elva dans ses bras">
-                            </picture>
-                            <div class="card__caption">
-                                <h3 class="card__title"><a href="#">Auberge la Cannebière</a></h3>
-                                <div class="card__price-by-night">
-                                    <span>Nuit à partir de <strong>25€</strong></span>
-                                </div>
-                                <span class="card__stars">
-                                    <i class="fas fa-star blue"></i>
-                                    <i class="fas fa-star blue"></i>
-                                    <i class="fas fa-star blue"></i>
-                                    <i class="fas fa-star blue"></i>
-                                    <i class="fas fa-star grey"></i>
-                                </span>                            
-                            </div>
-    
-                        </div>
-                        <div class="card h-card-home" >
-                            <picture class="card__thumbnail">
-                                <!--<source media="(max-width: 768px)" srcset="css/hebergements/3_medium/marcus-loke-WQJvWU_HZFo-unsplash.jpg">-->
-                                <img src="css/hebergements/4_small/marcus-loke-WQJvWU_HZFo-unsplash.jpg" alt="Chris debout tenant sa fille Elva dans ses bras">
-                            </picture>
-                            <div class="card__caption">
-                                <h3 class="card__title"><a href="#">Auberge la Cannebière</a></h3>
-                                <div class="card__price-by-night">
-                                    <span>Nuit à partir de <strong>25€</strong></span>
-                                </div>
-                                <span class="card__stars">
-                                    <i class="fas fa-star blue"></i>
-                                    <i class="fas fa-star blue"></i>
-                                    <i class="fas fa-star blue"></i>
-                                    <i class="fas fa-star blue"></i>
-                                    <i class="fas fa-star grey"></i>
-                                </span>                            
-                            </div>
-    
-                        </div>
                     </div>
+                </div>
 
-                </section>
-                
+            </section>
+            
+        </div>
+
+        <section class="activity-related" id="activity" >
+            <h2>Activités à Marseille</h2>
+            <div class="activity-related__card-container">
+
+                <div class="card card-activity" >
+                    <picture class="card__thumbnail">
+                        <img src="css/hebergements/4_small/marcus-loke-WQJvWU_HZFo-unsplash.jpg" alt="Chris debout tenant sa fille Elva dans ses bras">
+                    </picture>
+                    <div class="card__caption">
+                        <h3 class="card__title"><a href="#">Vieux Port</a></h3>                         
+                    </div>
+                </div>
+
+                <div class="card card-activity" >
+                    <picture class="card__thumbnail">
+                        <img src="css/hebergements/4_small/marcus-loke-WQJvWU_HZFo-unsplash.jpg" alt="Chris debout tenant sa fille Elva dans ses bras">
+                    </picture>
+                    <div class="card__caption">
+                        <h3 class="card__title"><a href="#">Vieux Port</a></h3>                         
+                    </div>
+                </div>
+
+                <div class="card card-activity" >
+                    <picture class="card__thumbnail">
+                        <img src="css/hebergements/4_small/marcus-loke-WQJvWU_HZFo-unsplash.jpg" alt="Chris debout tenant sa fille Elva dans ses bras">
+                    </picture>
+                    <div class="card__caption">
+                        <h3 class="card__title"><a href="#">Vieux Port</a></h3>                         
+                    </div>
+                </div>
+
+                <div class="card card-activity" >
+                    <picture class="card__thumbnail">
+                        <img src="css/hebergements/4_small/marcus-loke-WQJvWU_HZFo-unsplash.jpg" alt="Chris debout tenant sa fille Elva dans ses bras">
+                    </picture>
+                    <div class="card__caption">
+                        <h3 class="card__title"><a href="#">Vieux Port</a></h3>                         
+                    </div>
+                </div>
+
+                <div class="card card-activity" >
+                    <picture class="card__thumbnail">
+                        <img src="css/hebergements/4_small/marcus-loke-WQJvWU_HZFo-unsplash.jpg" alt="Chris debout tenant sa fille Elva dans ses bras">
+                    </picture>
+                    <div class="card__caption">
+                        <h3 class="card__title"><a href="#">Vieux Port</a></h3>                         
+                    </div>
+                </div>
+
+                <div class="card card-activity" >
+                    <picture class="card__thumbnail">
+                        <img src="css/hebergements/4_small/marcus-loke-WQJvWU_HZFo-unsplash.jpg" alt="Chris debout tenant sa fille Elva dans ses bras">
+                    </picture>
+                    <div class="card__caption">
+                        <h3 class="card__title"><a href="#">Vieux Port</a></h3>                         
+                    </div>
+                </div>
+
             </div>
-
-            <section class="activity-related" id="activity" >
-                <h2>Activités à Marseille</h2>
-                <div class="activity-related__card-container">
-
-                    <div class="card card-activity" >
-                        <picture class="card__thumbnail">
-                            <img src="css/hebergements/4_small/marcus-loke-WQJvWU_HZFo-unsplash.jpg" alt="Chris debout tenant sa fille Elva dans ses bras">
-                        </picture>
-                        <div class="card__caption">
-                            <h3 class="card__title"><a href="#">Vieux Port</a></h3>                         
-                        </div>
-                    </div>
-
-                    <div class="card card-activity" >
-                        <picture class="card__thumbnail">
-                            <img src="css/hebergements/4_small/marcus-loke-WQJvWU_HZFo-unsplash.jpg" alt="Chris debout tenant sa fille Elva dans ses bras">
-                        </picture>
-                        <div class="card__caption">
-                            <h3 class="card__title"><a href="#">Vieux Port</a></h3>                         
-                        </div>
-                    </div>
-
-                    <div class="card card-activity" >
-                        <picture class="card__thumbnail">
-                            <img src="css/hebergements/4_small/marcus-loke-WQJvWU_HZFo-unsplash.jpg" alt="Chris debout tenant sa fille Elva dans ses bras">
-                        </picture>
-                        <div class="card__caption">
-                            <h3 class="card__title"><a href="#">Vieux Port</a></h3>                         
-                        </div>
-                    </div>
-
-                    <div class="card card-activity" >
-                        <picture class="card__thumbnail">
-                            <img src="css/hebergements/4_small/marcus-loke-WQJvWU_HZFo-unsplash.jpg" alt="Chris debout tenant sa fille Elva dans ses bras">
-                        </picture>
-                        <div class="card__caption">
-                            <h3 class="card__title"><a href="#">Vieux Port</a></h3>                         
-                        </div>
-                    </div>
-
-                    <div class="card card-activity" >
-                        <picture class="card__thumbnail">
-                            <img src="css/hebergements/4_small/marcus-loke-WQJvWU_HZFo-unsplash.jpg" alt="Chris debout tenant sa fille Elva dans ses bras">
-                        </picture>
-                        <div class="card__caption">
-                            <h3 class="card__title"><a href="#">Vieux Port</a></h3>                         
-                        </div>
-                    </div>
-
-                    <div class="card card-activity" >
-                        <picture class="card__thumbnail">
-                            <img src="css/hebergements/4_small/marcus-loke-WQJvWU_HZFo-unsplash.jpg" alt="Chris debout tenant sa fille Elva dans ses bras">
-                        </picture>
-                        <div class="card__caption">
-                            <h3 class="card__title"><a href="#">Vieux Port</a></h3>                         
-                        </div>
-                    </div>
-
-                </div>
-            </section>
-        </main>
+        </section>
+    </main>
 
     <footer class="l-footer">
         <div class="legal-mention__container">
