@@ -47,15 +47,19 @@ table {
 	border-spacing: 0;
 }
 
+
+
 /* Base __________ */
 @font-face {
     font-family: 'Raleway-medium';
     src: url('fonts/Raleway-Medium.ttf') format('truetype');
 }
+
 @font-face {
     font-family: 'Raleway-semi-bold';
     src: url('fonts/Raleway-SemiBold.ttf') format('truetype');
 }
+
 @font-face {
     font-family: 'Raleway-bold';
     src: url('fonts/Raleway-Bold.ttf') format('truetype');
@@ -296,7 +300,7 @@ a:visited {
     user-select: none;
 }
 
-.btn-filter:hover { color : rgba(0,0,0,0.7);  }
+.btn-filter:hover { background-color : var(--grey-darker);  }
 
     .btn-filter__icon {
         width : 50px;
@@ -350,7 +354,7 @@ a:visited {
      margin-bottom: 56px;
 }
 
-    .related-logement{ width : 65.67%; }
+    .related-logement{ width : 65.67%; margin-right : 40px; }
 
     .related-logement, .popular-logement {
         padding : 40px;
@@ -359,6 +363,8 @@ a:visited {
 
         background-color : var(--grey);
     }
+
+    .popular-logement__card-container .h-card-home:nth-child(3) { margin-bottom : 0; }
 
         .related-logement__card-container {
             display : flex;
@@ -372,6 +378,7 @@ a:visited {
             font-size : 18px;
             font-family: 'Raleway-bold', Arial, Helvetica, sans-serif;
         }
+        
         .related-logement__see-more:hover { text-decoration: underline; }
 
 
@@ -409,6 +416,7 @@ a:visited {
         }
 
         .card__title { 
+
             padding-bottom : 6px;
 
             line-height: 20px;
@@ -446,9 +454,8 @@ a:visited {
     border-radius : 30px;
 
     font-size : 16px;
-
-
     color : white;
+    
     z-index : 2;
 }
 
@@ -469,20 +476,34 @@ a:visited {
 .v-card-home { flex-direction: column; width : 30.75%; margin-bottom : 31px; }
 
     .v-card-home img { height: 114px; width : 100%; }
+    
+    .v-card-home .card__title { 
+        overflow: hidden; 
+        white-space: nowrap;
+        text-overflow: ellipsis;
+    }
 
 /* --- */
 
 /* h-card-home design --- */
 
-.h-card-home { flex-direction: row; margin-bottom : 33px; height : 144px; }
+.h-card-home {  flex-direction: row; margin-bottom : 33px; height : 144px; }
 
-    .h-card-home img { height: 100%;; width : 100%; }
+    .h-card-home img { height: 100%; min-width : 104px; width : 104px; }
 
-    .h-card-home .card-home__stars { position : absolute; bottom : 5px; }
 
-    .h-card-home .card__caption { margin : 11px 11px 5px 20px; width : 171px; }
 
-    .h-card-home .card__thumbnail { width: 127px; }
+    .h-card-home .card__caption { 
+        margin : 11px 11px 5px 20px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .h-card-home .card__price-by-night{
+        flex : 1;
+    }
+
+
 
 
 /* --- */
@@ -496,22 +517,24 @@ a:visited {
     .card-activity .card__caption { position :absolute; bottom : 0; left : 0; right : 0; background-color : white; }
 
     .card-activity .card__title { 
-        overflow: hidden; 
         padding : 0 0 0 20px;
 
         line-height : 53px; 
-        white-space: nowrap;
-        text-overflow: ellipsis;
     }
 
     .card-activity .btn-see-more { bottom : 10px; right : 10px; }
 
-
+    .card-activity .card__title { 
+        overflow : hidden; 
+        white-space : nowrap;
+        text-overflow : ellipsis;
+     }
 
 /* --- */
 
 .popular-logement { 
     width : 31.343%;
+    min-width: 365px;
 }
 
     .popular-logement__title {
@@ -556,15 +579,16 @@ a:visited {
 
 .legal-mention__container {
     display : flex;
-    justify-content: flex-start;
+    justify-content: space-between;
+    flex-wrap: wrap;
     padding : 0 50px;
     max-width: 1440px;
     margin : auto;
 }
 
 .legal-mention {
-    width : 100%;
     padding-right : 40px;
+    padding-bottom: 20px;
 }
 
 .legal-mention__container .legal-mention:last-child {  padding-right : 0; }
@@ -594,19 +618,42 @@ a:visited {
         .related-logement { order : 1;  }
 
     .popular-logement__card-container { display : flex; justify-content: space-between;  }
+    .popular-logement__card-container .h-card-home { margin-bottom : 0; }
 
     .h-card-home { flex-direction: column;  margin-bottom : 31px; height : auto; width : 30.75% }
 
-        .h-card-home img { height: 114px; width : 100%; max-width: none; }
+        .h-card-home img { height: 114px; width : 100%; }
         
-        .h-card-home .card__thumbnail { width: 100%; }
+        .h-card-home .card__caption { 
+            margin: 8px 11px 5px 11px;
+            height : calc(100% - 114px);
+         }
 
-        .h-card-home .card__caption { margin: 8px 11px 5px 11px; }
+        .h-card-home .card__stars { position : relative;  }
 
     .activity-related__card-container { grid-template-rows: 155.2px 35.2px 35.2px 131.2px; }
 }
 
-@media screen and (max-width : 991px) {
+@media screen and (max-width : 768px) {
+    h2 { padding : 4px 0 28px 0; }
+
+    .l-main { padding : 0 ; }
+
+    .research { padding : 0 20px; }
+    .research h1 {
+        line-height: 26px;
+        padding-bottom : 16px; 
+    }
+
+    .related-logement, .popular-logement { width : 100%; border-radius: 0; padding : 36px 20px ; margin : 0; }
+    .related-logement { background-color: white; }
+    
+        .filter { margin : 35px -11px 0 0; }
+
+                .btn-filter { margin : 0 11px 13px 0; }
+                    .btn-filter__caption { font-size : 16px; padding: 0 18px 0 10px; }
+
+        .research__result { margin: 18px 0 37px 0; }
 
     .l-header { padding : 27px 0px 31px 0px;   }
 
@@ -634,54 +681,80 @@ a:visited {
 
     .header__btn__subscribtion:active {  background-color : transparent; color : black; }
 
-    .activity-related__card-container { grid-template-rows: 116.4px 26.4px 26.4px 98.4px; }
+    .activity-related{ padding : 0 20px; }
+
+    .activity-related__card-container { 
+        grid-template-columns : repeat(2, 1fr);
+        grid-column-gap : 3%;
+        grid-row-gap : 3%;
+        grid-template-rows: repeat(3, 232.8px); 
+    }
+
+    .activity-related__card-container .card-activity:nth-child(-n+6) { grid-row : auto / auto; }
 
     .card-activity .card__title { line-height: 45px; }
 
+    .search {
+        margin-top: 35px;
+        max-width : 420px;
+        width : auto;
+    }
+        .search__validation { min-width : 51px; border-radius : 13px; }
+        .search__validation__text { display : none; }
+        .search__validation__icon { display : inline; }
+
+    .v-card-home{ width : 47%; }
+
+    /* footer --- */
+    .l-footer { height : auto; padding : 48px 28px 28px 28px; }
+
+    .legal-mention__container {
+        flex-wrap: wrap;
+        padding : 0;
+    }
+    
+    .legal-mention { margin : 0 0 28px 0; }
+
+    .legal-mention__container .legal-mention:nth-child(3) { margin : 0; }
 }
 
-@media screen and (max-width: 500px) {
-    h2 { padding : 4px 0 28px 0; }
+@media screen and (max-width : 610px) {
 
-    .l-main { padding : 0 ; }
+    .popular-logement__card-container { display : block;  }
 
-    .research { padding : 0 20px; }
-    .research h1 {
-        line-height: 26px;
-        padding-bottom : 16px; 
+    
+    .h-card-home { 
+        flex-direction: row;
+        margin-bottom : 33px;
+        height : 144px;
+        margin: 0 0 11px 0; width : auto;
     }
-        .search {
-            margin-top: 35px;
-            max-width : 420px;
-            width : auto;
-        }
-            .search__validation { min-width : 51px; border-radius : 13px; }
-            .search__validation__text { display : none; }
-            .search__validation__icon { display : inline; }
-    
-        .filter { margin : 35px -11px 0 0; }
+        .h-card-home img { height: 100%;  width : 180px; min-width : 180px;  }
 
-                .btn-filter { margin : 0 11px 13px 0; }
-                    .btn-filter__caption { font-size : 16px; padding: 0 18px 0 10px; }
+        .h-card-home .card__caption { 
+            height : auto;
+         }
 
-        .research__result { margin: 18px 0 37px 0; }
+    .popular-logement__card-container .h-card-home:nth-child(-n+2) { margin-bottom : 33px; }     
+}
+
+@media screen and (max-width: 425px) {
+
+    .popular-logement { min-width : auto;  }
+
+    .h-card-home img { width : 104px; min-width : 104px;  }
+
     
+
     .logement-container { flex-direction : column;  margin : 0px;}
-    .related-logement, .popular-logement { width : 100%; border-radius: 0; padding : 36px 20px ; margin : 0; }
+
     .related-logement { order : 1; background-color : transparent; padding: 36px 20px 0 20px; }
 
-        .popular-logement__card-container { display : block;  }
+
         
             .v-card-home { width : 100%; margin: 0 0 12px 0; }
 
-            .h-card-home { 
-                flex-direction: row;
-                margin-bottom : 33px;
-                height : 144px;
-                margin: 0 0 11px 0; width : auto;
-            }
-                .h-card-home img { height: 100%; width : 100%; }
-                .h-card-home .card__thumbnail { width: 127px; }
+
 
         .related-logement__see-more { margin: 20px 0 0 0; }
 
@@ -700,16 +773,6 @@ a:visited {
 
             .card-activity .card__title { line-height : 53px;  }
 
-    /* footer --- */
-    .l-footer { height : auto; padding : 48px 28px 28px 28px; }
 
-    .legal-mention__container {
-        flex-direction: column;
-        padding : 0;
-    }
-    
-    .legal-mention { margin : 0 0 28px 0; }
-
-    .legal-mention__container .legal-mention:nth-child(3) { margin : 0; }
     
 }
