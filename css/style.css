@@ -71,7 +71,7 @@ table {
     box-sizing: border-box;
  }
 
-:root {
+body {
     --blue : #0065fc;
     --grey : #f2f2f2;
     --grey-darker : #d9d9d9;
@@ -399,7 +399,6 @@ a:visited {
             bottom: -5px;
             left: -5px;
             z-index: 1;
-            pointer-events: auto;
             content: "";
             background-color: transparent;
         }
