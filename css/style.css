@@ -324,7 +324,7 @@ a:visited {
 
 .research__result {
     margin: 23px 0 37px 0;
-    letter-spacing: -0.1px;
+    letter-spacing: -0.1008px;
 }
     .research__result{
         padding-left : 35px;
@@ -392,7 +392,7 @@ a:visited {
         width : 100%;  
         box-shadow: 0px 4px 10px rgba(0,0,0,0.1);
         display : flex; 
-        animation : fadeIn ease-out 1s;    
+        animation : fadeIn ease 1s;    
     }
 
     .card:hover{ box-shadow: 0px 4px 10px rgba(0,0,0,0.2); }
@@ -426,11 +426,11 @@ a:visited {
 
         .card__thumbnail { margin-bottom : -2px; }
 
-        .card__price-by-night { font-size : 13.5px; margin-bottom : 6px; letter-spacing : 0.1px; }
+        .card__price-by-night { font-size : 13.5008px; margin-bottom : 6px; letter-spacing : 0.1008px; }
         
         .card__price-by-night strong { font-family : 'Raleway-semi-bold', Arial, Helvetica, sans-serif; }
         
-        .card__stars { font-size : 12px; letter-spacing: -1.3px; }
+        .card__stars { font-size : 12px; letter-spacing: -1.3008px; }
 /* ---------- */
 
 /* .v-card-home design --- */
@@ -449,21 +449,29 @@ a:visited {
 
 .h-card-home { flex-direction: row; margin-bottom : 33px; height : 144px; }
 
-    .h-card-home img { height: 100%;; max-width : 127px; }
+    .h-card-home img { height: 100%;; width : 100%; }
 
     .h-card-home .card-home__stars { position : absolute; bottom : 5px; }
-    .h-card-home .card__caption { margin : 11px 11px 5px 20px; }
+    .h-card-home .card__caption { margin : 11px 11px 5px 20px; width : 171px; }
+    .h-card-home .card__thumbnail { width: 127px; }
 
 
 /* --- */
 
 /* card-activity design --- */
 
-.card-activity { display : block; height : 100%;  }
+.card-activity { position : relative; display : block; height : 100%;  }
 
-    .card-activity img { height : calc(100% - 55px); width : 100%; }
+    .card-activity img { height : 100%; width : 100%; }
+    .card-activity .card__caption { position :absolute; bottom : 0; left : 0; right : 0; background-color : white; }
+    .card-activity .card__title { 
+        overflow: hidden; 
+        padding : 0 0 0 20px;
 
-    .card-activity .card__title { padding : 0 0 0 20px; height : 100%; line-height : 53px;  }
+        line-height : 53px; 
+        white-space: nowrap;
+        text-overflow: ellipsis;
+    }
 
 
 
@@ -545,10 +553,14 @@ a:visited {
     .popular-logement__card-container { display : flex; justify-content: space-between;  }
 
 
-    .h-card-home { width : 30.75% }
+    .h-card-home { flex-direction: column;  margin-bottom : 31px; height : auto; width : 30.75% }
+        .h-card-home img { height: 114px; width : 100%; max-width: none; }
+        .h-card-home .card__thumbnail { width: 100%; }
+        .h-card-home .card__caption { margin: 8px 11px 5px 11px; }
 
-    .h-card-home { flex-direction: column;  margin-bottom : 31px; height : auto; }
-    .h-card-home img { height: 114px; width : 100%; max-width: none; }
+    .activity-related__card-container {
+        grid-template-rows: 155.2px 35.2px 35.2px 131.2px;
+    }
 }
 
 @media screen and (max-width : 991px) {
@@ -572,11 +584,14 @@ a:visited {
     .header__btn__subscribtion:hover {  border-color : transparent; text-decoration: underline; }
     .header__btn__subscribtion:active {  background-color : transparent; color : black; }
     /* ---- */
-        
+     
+    .activity-related__card-container { grid-template-rows: 116.4px 26.4px 26.4px 98.4px; }
+    .card-activity .card__title { line-height: 45px; }
+
 }
 
 @media screen and (max-width: 768px) {
-
+    h2 { padding : 4px 0 28px 0; }
 
     /* main --- */
     .l-main { padding : 0 ; }
@@ -592,31 +607,35 @@ a:visited {
             max-width : 420px;
             width : auto;
         }
-        .search__validation{ min-width : 51px; border-radius : 13px; }
-        .search__validation__text{ display : none; }
-        .search__validation__icon{ display : inline; }
+            .search__validation{ min-width : 51px; border-radius : 13px; }
+            .search__validation__text{ display : none; }
+            .search__validation__icon{ display : inline; }
     
-    .filter { margin : 35px -11px 0 0; }
-   
-            .btn-filter { margin : 0 11px 13px 0; }
-                .btn-filter__caption{ font-size : 16px; padding: 0 18px 0 10px; }
+        .filter { margin : 35px -11px 0 0; }
 
-    .research__result{ margin: 18px 0 37px 0; }
+                .btn-filter { margin : 0 11px 13px 0; }
+                    .btn-filter__caption{ font-size : 16px; padding: 0 18px 0 10px; }
+
+        .research__result{ margin: 18px 0 37px 0; }
     
     .logement-container { flex-direction : column;  margin : 0px;}
-        .related-logement, .popular-logement { width : 100%; border-radius: 0; padding : 36px 20px ; margin : 0; }
-        .related-logement { order : 1; background-color : transparent; padding: 36px 20px 0 20px; }
+    .related-logement, .popular-logement { width : 100%; border-radius: 0; padding : 36px 20px ; margin : 0; }
+    .related-logement { order : 1; background-color : transparent; padding: 36px 20px 0 20px; }
 
         .popular-logement__card-container { display : block;  }
-
         
             .v-card-home{ width : 100%; margin: 0 0 12px 0; }
 
-            .h-card-home { flex-direction: row; margin-bottom : 33px; height : 144px; }
-            .h-card-home img { height: 100%;; max-width : 127px; }
-            .h-card-home{ margin: 0 0 11px 0; width : auto; }
+            .h-card-home { 
+                flex-direction: row;
+                margin-bottom : 33px;
+                height : 144px;
+                margin: 0 0 11px 0; width : auto;
+            }
+                .h-card-home img { height: 100%; width : 100%; }
+                .h-card-home .card__thumbnail { width: 127px; }
 
-        h2 { padding : 4px 0 28px 0; }
+
 
         .related-logement__see-more { margin: 20px 0 0 0; }
 
@@ -630,7 +649,7 @@ a:visited {
                 height : 190px;
                 margin-bottom : 24px;
             }
-
+            .card-activity .card__title { line-height : 53px;  }
 
     /* footer --- */
     .l-footer{ height : auto; padding : 48px 28px 28px 28px; }
