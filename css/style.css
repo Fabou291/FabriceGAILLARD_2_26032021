@@ -77,9 +77,11 @@ table {
 
 body {
     --blue : #0065fc;
+    --blue-light : #DEEBFF;
     --grey : #f2f2f2;
     --grey-darker : #d9d9d9;
 }
+
 
 .blue { color : var(--blue); }
 .grey-darker { color : var(--grey-darker); }
@@ -138,7 +140,6 @@ a:visited {
 
 .l-footer { 
     padding : 47px 50px;
-    height : 220px;
     background-color : var(--grey)
 }
 
@@ -308,7 +309,7 @@ a:visited {
         position: relative;
         left : -2px;
 
-        background-color : #deebff;
+        background-color : var(--blue-light);
 
         border : 2px solid transparent;
         border-radius : 30px;
@@ -471,17 +472,20 @@ a:visited {
 
 .v-card-home, .h-card-home { border : 5px solid white; }
 
-.v-card-home .card__caption  {  margin : 8px 11px 5px 11px; }
+.v-card-home .card__caption  {  
+    display : flex;
+    flex-direction: column;
+    height : calc(100% - 114px);
+    margin : 8px 11px 5px 11px; 
+}
+
+.v-card-home .card__price-by-night { flex: 1; }
 
 .v-card-home { flex-direction: column; width : 30.75%; margin-bottom : 31px; }
 
     .v-card-home img { height: 114px; width : 100%; }
     
-    .v-card-home .card__title { 
-        overflow: hidden; 
-        white-space: nowrap;
-        text-overflow: ellipsis;
-    }
+
 
 /* --- */
 
@@ -517,18 +521,12 @@ a:visited {
     .card-activity .card__caption { position :absolute; bottom : 0; left : 0; right : 0; background-color : white; }
 
     .card-activity .card__title { 
-        padding : 0 0 0 20px;
-
-        line-height : 53px; 
+        padding : 20px 0 20px 20px;
     }
 
     .card-activity .btn-see-more { bottom : 10px; right : 10px; }
 
-    .card-activity .card__title { 
-        overflow : hidden; 
-        white-space : nowrap;
-        text-overflow : ellipsis;
-     }
+
 
 /* --- */
 
@@ -553,25 +551,20 @@ a:visited {
  
     grid-template-columns : repeat(4, 1fr);
     grid-template-rows : 194px 44px 44px 164px;
-    grid-column-gap : 3.134%;
+    gap : 3.134%;
 }
 
 .activity-related__card-container .card-activity:nth-child(1) { grid-row : 1/5; }
 
 .activity-related__card-container .card-activity:nth-child(2) { grid-row : 1/3; }
 
-.activity-related__card-container .card-activity:nth-child(3) { grid-row-start : 4; }
+.activity-related__card-container .card-activity:nth-child(3) { grid-row : 4; }
 
 .activity-related__card-container .card-activity:nth-child(4) { grid-row : 1/5; }
 
-.activity-related__card-container .card-activity:nth-child(5) { grid-row-start : 1;  }
+.activity-related__card-container .card-activity:nth-child(5) { grid-row : 1;  }
 
 .activity-related__card-container .card-activity:nth-child(6) { grid-row : 3/5; }
-
-
-
-
-
 
 
 
@@ -587,7 +580,7 @@ a:visited {
 }
 
 .legal-mention {
-    padding-right : 40px;
+    padding-right : 60px;
     padding-bottom: 20px;
 }
 
@@ -631,7 +624,14 @@ a:visited {
 
         .h-card-home .card__stars { position : relative;  }
 
-    .activity-related__card-container { grid-template-rows: 155.2px 35.2px 35.2px 131.2px; }
+    .activity-related__card-container { 
+        grid-template-columns: repeat(3, 1fr); 
+        grid-template-rows: repeat(2, 1fr); 
+        gap : 20px;
+    }
+    .activity-related__card-container .card-activity {  grid-row : auto / auto !important; }
+
+    
 }
 
 @media screen and (max-width : 768px) {
@@ -647,6 +647,7 @@ a:visited {
 
     .related-logement, .popular-logement { width : 100%; border-radius: 0; padding : 36px 20px ; margin : 0; }
     .related-logement { background-color: white; }
+    .logement-container{ margin : 0px; }
     
         .filter { margin : 35px -11px 0 0; }
 
@@ -685,14 +686,12 @@ a:visited {
 
     .activity-related__card-container { 
         grid-template-columns : repeat(2, 1fr);
-        grid-column-gap : 3%;
-        grid-row-gap : 3%;
-        grid-template-rows: repeat(3, 232.8px); 
+        grid-template-rows: repeat(3, 1fr); 
     }
 
     .activity-related__card-container .card-activity:nth-child(-n+6) { grid-row : auto / auto; }
 
-    .card-activity .card__title { line-height: 45px; }
+
 
     .search {
         margin-top: 35px;
@@ -735,7 +734,9 @@ a:visited {
             height : auto;
          }
 
-    .popular-logement__card-container .h-card-home:nth-child(-n+2) { margin-bottom : 33px; }     
+    .popular-logement__card-container .h-card-home:nth-child(-n+2) { margin-bottom : 33px; }   
+    
+    
 }
 
 @media screen and (max-width: 425px) {
@@ -746,7 +747,7 @@ a:visited {
 
     
 
-    .logement-container { flex-direction : column;  margin : 0px;}
+    .logement-container { flex-direction : column; }
 
     .related-logement { order : 1; background-color : transparent; padding: 36px 20px 0 20px; }
 
@@ -772,7 +773,5 @@ a:visited {
             }
 
             .card-activity .card__title { line-height : 53px;  }
-
-
     
 }
