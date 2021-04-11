@@ -1,3 +1,4 @@
+/* +++ Reset [Section] +++ */
 /* http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126
    License: none (public domain)
@@ -48,8 +49,11 @@ table {
 }
 
 
+/* +++ Base [Section] +++ */
+* { 
+    box-sizing: border-box;
+}
 
-/* Base __________ */
 @font-face {
     font-family: 'Raleway-medium';
     src: url('fonts/Raleway-Medium.ttf') format('truetype');
@@ -70,23 +74,9 @@ table {
     100%    { opacity:1; }
 }
 
-
-* { 
-    box-sizing: border-box;
- }
-
-body {
-    --blue : #0065fc;
-    --blue-light : #DEEBFF;
-    --grey : #f2f2f2;
-    --grey-darker : #d9d9d9;
+html, body { 
+    scroll-behavior: smooth;
 }
-
-
-.blue { color : var(--blue); }
-.grey-darker { color : var(--grey-darker); }
-
-html, body { scroll-behavior: smooth; }
 
 body {
     display : flex;
@@ -95,13 +85,28 @@ body {
 
     font-family : 'Raleway-medium', Arial, Helvetica, sans-serif;
     font-size : 1em;
+
+    --blue : #0065fc;
+    --blue-light : #DEEBFF;
+    --grey : #f2f2f2;
+    --grey-darker : #d9d9d9;
 }
 
-h1,h2,h3 { font-family: 'Raleway-bold', Arial, Helvetica, sans-serif; }
-h1,h2 { font-size : 22px; }
-h1 { padding-bottom : 12px; }
-h2 { padding : 4px 0 25px 0;  }
+h1,h2,h3 { 
+    font-family: 'Raleway-bold', Arial, Helvetica, sans-serif;
+}
 
+h1,h2 {
+    font-size : 22px;
+}
+
+h1 {
+    padding-bottom : 12px;
+}
+
+h2 {
+    padding : 4px 0 25px 0;
+}
 
 input {
     font-family : 'Raleway-medium', Arial, Helvetica, sans-serif;
@@ -127,320 +132,33 @@ a:visited {
     color : inherit;
 }
 
-/* Layout ______ */
 
-.l-header, .l-main {  
-    padding : 0 50px;
-    width : 100%;
-    max-width: 1440px;
-    margin : auto;
+/* +++ Generic Classes [Section] +++ */
+.blue { 
+    color : var(--blue); 
 }
 
-.l-main { flex : 1; }
-
-.l-footer { 
-    padding : 47px 50px;
-    background-color : var(--grey)
+.grey-darker { 
+    color : var(--grey-darker); 
 }
 
+.icon-info {
+    width : 24px;
+    min-width : 24px;
+    height : 24px;
+    margin-left : -35px;
+    margin-right : 11px;
 
+    text-align : center;
+    font-size : 12px;
+    color : var(--blue);
+    line-height : 24px!important;
 
-/* Module ______ */
-.header { 
-    display:flex;
-    align-items: center;
-    margin-bottom : 14px;
-}
-
-    .header__logo { margin-top : -2px; }
-
-    .header__menu { 
-        display : block; 
-        
-        font-size : 16px;
-        margin-left : auto;
-    }
-        
-        .header__menu ul { display : flex; align-items:center; }
-
-            .header__menu__item a{ 
-                display : block; 
-                padding : 48px 19px; 
-                margin-left : 30px; 
-                
-                border-top : 2px solid transparent; 
-            }
-
-            .header__menu__item a:visited { color : inherit; }
-
-            .header__menu__item a:hover { color : var(--blue); border-color : var(--blue);  }
-
-    .header__btn__subscribtion { 
-        display : block;
-        color : var(--blue); 
-        
-        font-family: 'Raleway-bold', Arial, Helvetica, sans-serif;
-
-        border : 2px solid transparent;
-        border-radius : 30px;
-        padding : 10px 25px;
-        margin-left : 30px; 
-        cursor : pointer;
-        user-select: none;
-    }
-
-        .header__btn__subscribtion:hover { border-color : var(--blue); }
-
-        .header__btn__subscribtion:visited { color : var(--blue); }
-
-
-/*------------SECTION RESEARCH---------------*/
-
-.search {
-    display : flex;
-
-    height : 51px;
-    width : 420px;
-    margin-top : 20px;
     border : 1px solid var(--grey);
-    border-radius : 16px;
-
+    border-radius: 20px;
 }
 
-.search input { font-size : 18px; }
-
-    .search_map {
-        min-width : 50px;
-        height : 100%;
-        padding : 0;
-
-        border : none;
-        border-radius : 15px 0 0 15px ; 
-        
-        background-color: var(--grey);
-
-        font-size : 18px;
-    }
-
-    .search_map:hover { background-color: #ececec; }
-    
-    .search_map:active { background-color : #ececec; box-shadow: 0 0 6px inset rgba(0,0,0,0.3); }
-
-    .search_input {
-        display : inline;
-        padding : 0 17px;
-        width : 100%;
-        border : none;
-        
-        
-        font-family : 'Raleway-bold', Arial, Helvetica, sans-serif;
-    }
-
-    .search__validation {
-        min-width : 134px;
-        cursor : pointer;
-
-        color : white;
-
-        border : none;
-        border-radius : 0 13px 13px 0; 
-
-        background-color : var(--blue);
-
-        font-family : 'Raleway-semi-bold', Arial, Helvetica, sans-serif;   
-    }
-
-    .search__validation__text{ display:inline; }
-
-    .search__validation__icon{ display : none; }
-
-    .search__validation:hover { background-color : #085fe0; }
-
-    .search__validation:active { background-color : var(--blue); box-shadow: 0 0 6px inset rgba(0,0,0,0.7); }
-
-.filter {
-    margin-top : 31px;
-    display : flex;
-    flex-wrap: wrap;
-    align-items: center;
-    font-family : 'Raleway-bold', Arial, Helvetica, sans-serif;
-    font-size : 18px;
-}
-    .filter__title{
-        font-size : 18px;
-        margin : 0px 32px 12px 0;
-    }
-
-    .filter__btn-container {
-        display : flex;
-        flex-wrap: wrap;
-    }
-
-        .filter__btn-container input { display : none; }
-
-        .filter__btn-container input:checked + .btn-filter .btn-filter__icon { background-color : transparent; color : var(--blue); }
-
-        .filter__btn-container input:checked + .btn-filter {    background-color : #dfebff; color : var(--blue); border-color : transparent;  }
-
-.btn-filter {
-    display : flex;
-    align-items : center;
-    height: 50px;
-    padding : 0;
-    border-radius : 30px;
-    margin : 0 24px 12px 0;
-    
-    background-color: transparent;
-
-    border : 2px solid var(--grey-darker);
-
-    font-family : inherit;
-    font-size : inherit;
-
-    cursor : pointer;
-    user-select: none;
-}
-
-.btn-filter:hover { background-color : var(--grey-darker);  }
-
-    .btn-filter__icon {
-        width : 50px;
-        height : 50px;
-        position: relative;
-        left : -2px;
-
-        background-color : var(--blue-light);
-
-        border : 2px solid transparent;
-        border-radius : 30px;
-
-        font-size : 20px;
-        text-align : center;
-        line-height : 50px!important;
-        color : var(--blue);
-    }
-
-    .btn-filter__caption {
-        padding : 0 22px 0 10px;
-        white-space : nowrap;
-    }
-
-.research__result {
-    margin: 23px 0 37px 0;
-    letter-spacing: -0.1008px;
-    padding-left : 35px;
-}
-
-    .icon-info {
-        min-width : 24px;
-        height : 24px;
-
-        text-align : center;
-        font-size : 12px;
-        color : var(--blue);
-        line-height : 24px!important;
-
-        margin-left : -35px;
-        margin-right : 11px;
-
-        border : 1px solid var(--grey);
-        border-radius: 20px;
-    }
-
-/*------------SECTION Hébergement---------------*/
-
-.logement-container {
-     display : flex;
-     justify-content: space-between;
-     margin-bottom: 56px;
-}
-
-    .related-logement{ width : 65.67%; margin-right : 40px; }
-
-    .related-logement, .popular-logement {
-        padding : 40px;
-
-        border-radius : 20px;
-
-        background-color : var(--grey);
-    }
-
-    .popular-logement__card-container .h-card-home:nth-child(3) { margin-bottom : 0; }
-
-        .related-logement__card-container {
-            display : flex;
-            justify-content: space-between;
-            flex-wrap: wrap;
-        }
-
-
-        .related-logement__see-more {
-            display : block;
-            margin-top : 11px;
-            font-size : 18px;
-            font-family: 'Raleway-bold', Arial, Helvetica, sans-serif;
-        }
-        
-        .related-logement__see-more a:hover { text-decoration: underline; }
-
-
-/* .card design ------ */
-
-    .card {
-        position : relative;
-        overflow : hidden;
-        border-radius : 20px;  
-        background-color : white; 
-        width : 100%;  
-        box-shadow: 0px 4px 10px rgba(0,0,0,0.1);
-        display : flex; 
-        animation : fadeIn ease 1s;    
-    }
-
-    .card:hover { box-shadow: 0px 4px 10px rgba(0,0,0,0.2); }
-
-    .card:hover .btn-see-more { display : flex; }
-
-        .card .btn-see-more::after {
-            position: absolute;
-            top: -5px;
-            right: -5px;
-            bottom: -5px;
-            left: -5px;
-            z-index: 1;
-            content: "";
-            background-color: transparent;
-        }
-
-        .card img {
-            object-fit: cover; 
-            object-position: 50% 50%; 
-        }
-
-        .card__title { 
-
-            padding-bottom : 6px;
-
-            line-height: 20px;
-            font-size : 16px;
-        }
-
-        .card__thumbnail { margin-bottom : -2px; }
-
-        .card__price-by-night { font-size : 13.5008px; margin-bottom : 6px; letter-spacing : 0.1008px; }
-        
-        .card__price-by-night strong, 
-        .card__price-by-night__money-type { 
-            font-family : 'Raleway-bold', Arial, Helvetica, sans-serif; 
-        }
-        
-        .card__stars { font-size : 12px; letter-spacing: -1.3008px; }
-
-/* ---------- */
-
-
-/* Design button see-more ------ */
-
+/* -- .btn-see-more [Module] -- */
 .btn-see-more {
     display : none;
     justify-content: center;
@@ -461,116 +179,519 @@ a:visited {
     z-index : 2;
 }
 
-.btn-see-more:visited { color : white; }
+.btn-see-more::after {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    bottom: -5px;
+    left: -5px;
+    z-index: 1;
+    content: "";
+    background-color: transparent;
+}
 
-.btn-see-more:hover { transform: scale(1.1); }
+.btn-see-more:visited {
+    color : white;
+}
 
-    .btn-see-more i { padding-left : 1px; }
+.btn-see-more:hover {
+    transform: scale(1.1);
+}
 
-/* ----------------------- */
+.btn-see-more i {
+    padding-left : 1px;
+}
 
-/* .v-card-home design --- */
 
-.v-card-home, .h-card-home { border : 5px solid white; }
+/* -- .card [Module] -- */
+.card {
+    position : relative;
+    overflow : hidden;
+    border-radius : 20px;  
+    background-color : white; 
+    width : 100%;  
+    box-shadow: 0px 4px 10px rgba(0,0,0,0.1);
+    display : flex; 
+    animation : fadeIn ease 1s;    
+}
 
-.v-card-home .card__caption  {  
+.card:hover {
+    box-shadow: 0px 4px 10px rgba(0,0,0,0.2);
+}
+
+.card:hover .btn-see-more {
+    display : flex;
+}
+
+.card img {
+    object-fit: cover; 
+    object-position: 50% 50%; 
+}
+
+.card__title { 
+    padding-bottom : 6px;
+
+    line-height: 20px;
+    font-size : 16px;
+}
+
+.card__thumbnail {
+    margin-bottom : -2px;
+}
+
+.card__price-by-night {
+    font-size : 13.5008px;
+    margin-bottom : 6px;
+    letter-spacing : 0.1008px;
+}
+
+.card__price-by-night strong, 
+.card__price-by-night__money-type { 
+    font-family : 'Raleway-bold', Arial, Helvetica, sans-serif; 
+}
+
+.card__stars {
+    font-size : 12px;
+    letter-spacing: -1.3008px;
+}
+
+
+
+/* +++ Layout global [Section] +++ */
+.l-header, .l-main {  
+    padding : 0 50px;
+    width : 100%;
+    max-width: 1440px;
+    margin : auto;
+}
+
+.l-main {
+    flex : 1;
+}
+
+.l-footer { 
+    padding : 47px 50px;
+    background-color : var(--grey)
+}
+
+
+
+/* +++ Header [Section] +++ */
+
+/* -- Header [Module] -- */
+.header { 
+    display:flex;
+    align-items: center;
+    margin-bottom : 14px;
+}
+
+.header__logo { 
+    margin-top : -2px;
+}
+
+.header__menu { 
+    display : block; 
+    margin-left : auto;
+    
+    font-size : 16px;
+}
+    
+.header__menu ul {
+    display : flex; align-items:center;
+}
+
+.header__menu__item a{ 
+    display : block; 
+    padding : 48px 19px; 
+    margin-left : 30px; 
+    
+    border-top : 2px solid transparent; 
+}
+
+.header__menu__item a:visited {
+    color : inherit;
+}
+
+.header__menu__item a:hover {
+    color : var(--blue); 
+    border-color : var(--blue);
+}
+
+.header__btn-subscribtion { 
+    display : block;
+    color : var(--blue); 
+    
+    font-family: 'Raleway-bold', Arial, Helvetica, sans-serif;
+
+    border : 2px solid transparent;
+    border-radius : 30px;
+    padding : 10px 25px;
+    margin-left : 30px; 
+    cursor : pointer;
+    user-select: none;
+}
+
+.header__btn-subscribtion:hover {
+    border-color : var(--blue);
+}
+
+.header__btn-subscribtion:visited {
+    color : var(--blue);
+}
+
+
+/* +++ Research [Section] +++ */
+    
+/* -- Layout Research -- */
+.research__result {
+    margin: 23px 0 37px 0;
+    padding-left : 35px;
+
+    letter-spacing: -0.1008px;
+}
+
+/* -- search [Module] -- */
+.search {
+    display : flex;
+    height : 51px;
+    width : 420px;
+    margin-top : 20px;
+
+    border : 1px solid var(--grey);
+    border-radius : 16px;
+}
+
+.search__map {
+    min-width : 50px;
+    height : 100%;
+    padding : 0;
+
+    border : none;
+    border-radius : 15px 0 0 15px ; 
+    
+    background-color: var(--grey);
+
+    font-size : 18px;
+}
+
+.search__map:hover {
+    background-color: #ececec;
+}
+
+.search__map:active {
+    background-color : #ececec;
+    box-shadow: 0 0 6px inset rgba(0,0,0,0.3);
+}
+
+.search__input {
+    display : inline;
+    padding : 0 17px;
+    width : 100%;
+
+    border : none;
+
+    font-size : 18px;
+    font-family : 'Raleway-bold', Arial, Helvetica, sans-serif;
+}
+
+.search__validation {
+    min-width : 134px;
+    cursor : pointer;
+
+    color : white;
+
+    border : none;
+    border-radius : 0 13px 13px 0; 
+
+    background-color : var(--blue);
+
+    font-family : 'Raleway-semi-bold', Arial, Helvetica, sans-serif;   
+}
+
+.search__validation:hover {
+    background-color : #085fe0;
+}
+
+.search__validation:active {
+    background-color : var(--blue);
+    box-shadow: 0 0 6px inset rgba(0,0,0,0.7);
+}
+
+.search__validation__text{
+    display:inline;
+}
+
+.search__validation__icon{
+    display : none;
+}
+
+/* -- filter [Module] -- */
+.filter {
+    margin-top : 31px;
+    display : flex;
+    flex-wrap: wrap;
+    align-items: center;
+
+    font-family : 'Raleway-bold', Arial, Helvetica, sans-serif;
+    font-size : 18px;
+}
+
+.filter__title{
+    margin : 0px 32px 12px 0;
+
+    font-size : 18px;
+}
+
+.filter__btn-container {
+    display : flex;
+    flex-wrap: wrap;
+}
+
+.filter__btn-container input {
+    display : none;
+}
+
+.filter__btn-container input:checked + .btn-filter .btn-filter__icon {
+    background-color : transparent;
+    color : var(--blue);
+}
+
+.filter__btn-container input:checked + .btn-filter {
+    background-color : #dfebff;
+    color : var(--blue);
+    border-color : transparent;
+}
+
+/* -- btn-filter [Module] -- */
+.btn-filter {
+    display : flex;
+    align-items : center;
+    height: 50px;
+    padding : 0;
+    border-radius : 30px;
+    margin : 0 24px 12px 0;
+    
+    background-color: transparent;
+
+    border : 2px solid var(--grey-darker);
+
+    font-family : inherit;
+    font-size : inherit;
+
+    cursor : pointer;
+    user-select: none;
+}
+
+.btn-filter:hover {
+    background-color : var(--grey-darker); 
+}
+
+.btn-filter__icon {
+    width : 50px;
+    height : 50px;
+    position: relative;
+    left : -2px;
+
+    background-color : var(--blue-light);
+
+    border : 2px solid transparent;
+    border-radius : 30px;
+
+    font-size : 20px;
+    text-align : center;
+    line-height : 50px!important;
+    color : var(--blue);
+}
+
+.btn-filter__caption {
+    padding : 0 22px 0 10px;
+    white-space : nowrap;
+}
+
+        
+/* +++ Logement [Section] +++ */
+    
+/* -- Layout -- */
+.logement-container {
+    display : flex;
+    justify-content: space-between;
+    margin-bottom: 56px;
+}
+
+/* -- related-logement [Module] -- */
+.related-logement{
+    width : 65.67%;
+    margin-right : 40px;
+}
+
+.related-logement, .popular-logement {
+    padding : 40px;
+
+    border-radius : 20px;
+
+    background-color : var(--grey);
+}
+
+.popular-logement__card-container .card-popular-home:nth-child(3) {
+    margin-bottom : 0;
+}
+
+.related-logement__card-container {
+    display : flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.related-logement__see-more {
+    display : block;
+    margin-top : 11px;
+
+    font-size : 18px;
+    font-family: 'Raleway-bold', Arial, Helvetica, sans-serif;
+}
+
+.related-logement__see-more a:hover {
+    text-decoration: underline;
+}
+
+/* -- .card-home [module] -- */
+.card-home {
+    flex-direction: column;
+    width : 30.75%;
+    margin-bottom : 31px;
+}
+
+.card-home, .card-popular-home {
+    border : 5px solid white;
+}
+
+.card-home .card__caption {  
     display : flex;
     flex-direction: column;
     height : calc(100% - 114px);
     margin : 8px 11px 5px 11px; 
 }
 
-.v-card-home .card__price-by-night { flex: 1; }
+.card-home .card__price-by-night {
+    flex: 1;
+}
 
-.v-card-home { flex-direction: column; width : 30.75%; margin-bottom : 31px; }
-
-    .v-card-home img { height: 114px; width : 100%; }
+.card-home img {
+    height: 114px;
+    width : 100%;
+}
     
 
-
-/* --- */
-
-/* h-card-home design --- */
-
-.h-card-home {  flex-direction: row; margin-bottom : 33px; height : 144px; }
-
-    .h-card-home img { height: 100%; min-width : 104px; width : 104px; }
-
-
-
-    .h-card-home .card__caption { 
-        margin : 11px 11px 5px 20px;
-        display: flex;
-        flex-direction: column;
-    }
-
-    .h-card-home .card__price-by-night{
-        flex : 1;
-    }
-
-
-
-
-/* --- */
-
-/* card-activity design --- */
-
-.card-activity { position : relative; display : block;   }
-
-    .card-activity img { height : 100%; width : 100%; }
-
-    .card-activity .card__caption { position :absolute; bottom : 0; left : 0; right : 0; background-color : white; }
-
-    .card-activity .card__title { 
-        padding : 20px 0 20px 20px;
-    }
-
-    .card-activity .btn-see-more { bottom : 10px; right : 10px; }
-
-
-
-/* --- */
+/* +++ Popular logement [section] +++ */
 
 .popular-logement { 
     width : 31.343%;
     min-width: 365px;
 }
 
-    .popular-logement__title {
-        display: flex;
-        justify-content: space-between;
-    }
+.popular-logement__title {
+    display: flex;
+    justify-content: space-between;
+}
 
-    .popular-logement .card:nth-child(n+4) { margin : 0; }
+.popular-logement .card:nth-child(n+4) {
+    margin : 0;
+}
 
-    
 
-.activity-related { margin : 0 0 91px 0; }
+/* -- .card-popular-home [module] -- */
+.card-popular-home {
+    flex-direction: row; margin-bottom : 33px; height : 144px;
+}
+
+.card-popular-home img {
+    height: 100%;
+    min-width : 104px;
+    width : 104px;
+}
+
+.card-popular-home .card__caption { 
+    margin : 11px 11px 5px 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.card-popular-home .card__price-by-night{
+    flex : 1;
+}
+
+
+/* +++ popular-logement [section] +++ */
+
+/* -- .card-activity [module] -- */
+.card-activity { 
+    position : relative;
+    display : block;
+}
+
+.card-activity img {
+    height : 100%;
+    width : 100%;
+}
+
+.card-activity .card__caption {
+    position :absolute;
+    bottom : 0;
+    left : 0;
+    right : 0;
+    background-color : white;
+}
+
+.card-activity .card__title { 
+    padding : 20px 0 20px 20px;
+}
+
+.card-activity .btn-see-more {
+    bottom : 10px;
+    right : 10px;
+}
+
+        
+/* +++ Activity [section] +++ */      
+
+/* -- .activity-related [module] */
+.activity-related {
+    margin : 0 0 91px 0;
+}
 
 .activity-related__card-container {
     display : grid;
- 
+
     grid-template-columns : repeat(4, 1fr);
     grid-template-rows : 194px 44px 44px 164px;
     gap : 3.134%;
 }
 
-.activity-related__card-container .card-activity:nth-child(1) { grid-row : 1/5; }
+.activity-related__card-container .card-activity:first-child,
+.activity-related__card-container .card-activity:nth-child(4) {
+    grid-row : 1/5;
+}
 
-.activity-related__card-container .card-activity:nth-child(2) { grid-row : 1/3; }
+.activity-related__card-container .card-activity:nth-child(2) { 
+    grid-row : 1/3; 
+}
 
-.activity-related__card-container .card-activity:nth-child(3) { grid-row : 4; }
+.activity-related__card-container .card-activity:nth-child(3) {
+    grid-row : 4;
+}
 
-.activity-related__card-container .card-activity:nth-child(4) { grid-row : 1/5; }
+.activity-related__card-container .card-activity:nth-child(5) {
+    grid-row : 1;
+}
 
-.activity-related__card-container .card-activity:nth-child(5) { grid-row : 1;  }
+.activity-related__card-container .card-activity:last-child {
+    grid-row : 3/5;
+}
 
-.activity-related__card-container .card-activity:nth-child(6) { grid-row : 3/5; }
 
+/* +++ footer [section] +++ */    
 
-
-/** footer **/
-
+/* -- .legal-mention__container [module] -- */
 .legal-mention__container {
     display : flex;
     justify-content: space-between;
@@ -580,90 +701,129 @@ a:visited {
     margin : auto;
 }
 
+.legal-mention__container .legal-mention:last-child {  
+    padding-right : 0;
+}
+
+/* -- .legal-mention [module] -- */
 .legal-mention {
     padding-right : 60px;
     padding-bottom: 20px;
 }
 
-.legal-mention__container .legal-mention:last-child {  padding-right : 0; }
+.legal-mention__title {
+    display : block;
+    margin-bottom : 23px;
 
-    .legal-mention__title {
-        display : block;
-        margin-bottom : 23px;
-        font-size : 18px;
-        font-family: 'Raleway-bold', Arial, Helvetica, sans-serif;
-    }
+    font-size : 18px;
+    font-family: 'Raleway-bold', Arial, Helvetica, sans-serif;
+}
 
-    .legal-mention__list li { margin-bottom : 15px; }
+.legal-mention__list li {
+    margin-bottom : 15px;
+}
 
-    .legal-mention__list a:hover { text-decoration: underline; }
-
+.legal-mention__list a:hover {
+    text-decoration: underline;
+}
 
         
-/* media queries */
+/* --@ media queries @-- */
 @media screen and (max-width : 1199px) {
     
-    .logement-container { flex-direction : column; }
+    /* +++ Logement [Section] +++ */
+    .logement-container {
+        flex-direction : column;
+    }
 
-        .related-logement, .popular-logement { width : 100%;  }
+    .related-logement, .popular-logement {
+        width : 100%;
+    }
+    
+    /* +++ Popular logement [Section] +++ */
+    .popular-logement {
+        margin-bottom: 40px;
+    }
 
-        .popular-logement { margin-bottom: 40px;  }
+    .related-logement {
+        order : 1;
+    }
 
-        .related-logement { order : 1;  }
+    .popular-logement__card-container {
+        display : flex;
+        justify-content: space-between;
+    }
+    .popular-logement__card-container .card-popular-home {
+        margin-bottom : 0;
+    }
 
-    .popular-logement__card-container { display : flex; justify-content: space-between;  }
-    .popular-logement__card-container .h-card-home { margin-bottom : 0; }
+    .card-popular-home {
+        flex-direction: column; 
+        margin-bottom : 31px;
+        height : auto;
+        width : 30.75%;
+    }
 
-    .h-card-home { flex-direction: column;  margin-bottom : 31px; height : auto; width : 30.75% }
+    .card-popular-home img {
+        height: 114px;
+        width : 100%;
+    }
+    
+    .card-popular-home .card__caption { 
+        margin: 8px 11px 5px 11px;
+        height : calc(100% - 114px);
+    }
 
-        .h-card-home img { height: 114px; width : 100%; }
-        
-        .h-card-home .card__caption { 
-            margin: 8px 11px 5px 11px;
-            height : calc(100% - 114px);
-         }
+    .card-popular-home .card__stars {
+        position : relative;
+    }
 
-        .h-card-home .card__stars { position : relative;  }
-
+    /* +++ Activity [Section] +++ */   
     .activity-related__card-container { 
         grid-template-columns: repeat(3, 1fr); 
         grid-template-rows: repeat(2, 1fr); 
         gap : 20px;
     }
-    .activity-related__card-container .card-activity {  grid-row : auto / auto !important; }
-    .activity-related { margin : 0 0 61px 0; }
-    .card-activity { height: 195px; }
 
-    
+    .activity-related__card-container .card-activity {
+        grid-row : auto / auto !important; 
+    }
+    .activity-related {
+        margin : 0 0 61px 0;
+    }
+
+    .card-activity {
+        height: 195px;
+    }
+
 }
 
 @media screen and (max-width : 768px) {
-    h2 { padding : 4px 0 28px 0; }
 
-    .l-main { padding : 0 ; }
-
-    .research { padding : 0 20px; }
-    .research h1 {
-        line-height: 26px;
-        padding-bottom : 16px; 
+    /* +++ Base [Section] +++ */ 
+    h2 {
+        padding : 4px 0 28px 0;
     }
 
-    .related-logement, .popular-logement { width : 100%; border-radius: 0; padding : 36px 20px ; margin : 0; }
-    .related-logement { background-color: white; }
-    .logement-container{ margin : 0px; }
-    
-        .filter { margin : 35px -11px 0 0; }
+    /* +++ Layout [Section] +++ */ 
+    .l-main {
+        padding : 0;
+    }
 
-                .btn-filter { margin : 0 11px 13px 0; }
-                    .btn-filter__caption { font-size : 16px; padding: 0 18px 0 10px; }
+    .l-header {
+        padding : 27px 0px 31px 0px;
+    }
 
-        .research__result { margin: 18px 0 37px 0; }
+    /* +++ Header [Section] +++ */   
+    .header {
+        flex-wrap: wrap;
+        margin : 0;
+    }
 
-    .l-header { padding : 27px 0px 31px 0px;   }
-
-    .header { flex-wrap: wrap; margin : 0; }
-
-    .header__menu { width : 100%; order: 1; }
+    .header__menu {
+        width : 100%;
+        order: 1;
+    }
 
     .header__menu__item a {
         padding : 26px 0 14px 0 ; 
@@ -677,105 +837,202 @@ a:visited {
         text-align : center; 
     }
 
-    .header__logo { margin-left : 20px; }
-
-    .header__btn__subscribtion {  margin-left : auto; padding : 5px 0 5px 5px; margin-right : 20px; }
-
-    .header__btn__subscribtion:hover {  border-color : transparent; text-decoration: underline; }
-
-    .header__btn__subscribtion:active {  background-color : transparent; color : black; }
-
-    .activity-related{ padding : 0 20px; }
-
-    .activity-related__card-container { 
-        grid-template-columns : repeat(2, 1fr);
-        grid-template-rows: repeat(3, 1fr); 
+    .header__logo {
+        margin-left : 20px;
     }
 
-    .activity-related__card-container .card-activity:nth-child(-n+6) { grid-row : auto / auto; }
+    .header__btn-subscribtion {
+        margin-left : auto;
+        padding : 5px 0 5px 5px;
+        margin-right : 20px;
+    }
 
+    .header__btn-subscribtion:hover {
+        border-color : transparent;
+        text-decoration: underline;
+    }
 
+    .header__btn-subscribtion:active {
+        background-color : transparent;
+        color : black;
+    }
+
+    /* +++ Research [Section] +++ */ 
+    .research {
+        padding : 0 20px;
+    }
+    .research h1 {
+        line-height: 26px;
+        padding-bottom : 16px; 
+    }
 
     .search {
         margin-top: 35px;
         max-width : 420px;
         width : auto;
     }
-        .search__validation { min-width : 51px; border-radius : 13px; }
-        .search__validation__text { display : none; }
-        .search__validation__icon { display : inline; }
 
-    .v-card-home{ width : 47%; }
+    .search__validation { 
+        min-width : 51px;
+        border-radius : 13px;
+    }
 
-    /* footer --- */
-    .l-footer { height : auto; padding : 48px 28px 28px 28px; }
+    .search__validation__text {
+        display : none;
+    }
+
+    .search__validation__icon {
+        display : inline;
+    }
+    
+    .filter {
+        margin : 35px -11px 0 0;
+    }
+
+    .btn-filter {
+        margin : 0 11px 13px 0;
+    }
+
+    .btn-filter__caption {
+        font-size : 16px;
+        padding: 0 18px 0 10px;
+    }
+
+    .research__result {
+        margin: 18px 0 37px 0;
+    }
+
+    /* +++ Logement [Section] +++ */ 
+    .related-logement, .popular-logement {
+        width : 100%;
+        border-radius: 0;
+        padding : 36px 20px;
+        margin : 0;
+    }
+
+    .related-logement {
+        background-color: white;
+    }
+
+    .logement-container {
+        margin : 0px;
+    }
+
+    .card-home {
+        width : 47%;
+    }
+
+    /* +++ Activity [Section] +++ */ 
+    .activity-related {
+        padding : 0 20px;
+    }
+
+    .activity-related__card-container { 
+        grid-template-columns : repeat(2, 1fr);
+        grid-template-rows: repeat(3, 1fr); 
+    }
+
+    .activity-related__card-container .card-activity:nth-child(-n+6) {
+        grid-row : auto / auto;
+    }
+
+    /* +++ Footer [Section] +++ */
+    .l-footer {
+        height : auto;
+        padding : 48px 28px 28px 28px;
+    }
 
     .legal-mention__container {
         flex-wrap: wrap;
         padding : 0;
     }
     
-    .legal-mention { margin : 0 0 28px 0; }
+    .legal-mention { 
+        margin : 0 0 28px 0;
+    }
 
-    .legal-mention__container .legal-mention:nth-child(3) { margin : 0; }
+    .legal-mention__container .legal-mention:nth-child(3) {
+        margin : 0;
+    }
+
 }
 
 @media screen and (max-width : 610px) {
 
-    .popular-logement__card-container { display : block;  }
+    /** +++ Logement [Section] +++ */
+    .popular-logement__card-container { 
+        display : block;
+    }
 
-    
-    .h-card-home { 
+    .card-popular-home { 
         flex-direction: row;
         margin-bottom : 33px;
         height : 144px;
-        margin: 0 0 11px 0; width : auto;
+        margin: 0 0 11px 0; 
+        width : auto;
     }
-        .h-card-home img { height: 100%;  width : 180px; min-width : 180px;  }
 
-        .h-card-home .card__caption { 
-            height : auto;
-         }
+    .card-popular-home img {
+        height: 100%; 
+        width : 180px;
+        min-width : 180px; 
+    }
 
-    .popular-logement__card-container .h-card-home:nth-child(-n+2) { margin-bottom : 33px; }   
-    
+    .card-popular-home .card__caption { 
+        height : auto;
+    }
+
+    .popular-logement__card-container .card-popular-home:nth-child(-n+2) {
+        margin-bottom : 33px;
+    }   
     
 }
 
 @media screen and (max-width: 425px) {
 
-    .popular-logement { min-width : auto;  }
+    /** +++ Logement [Section] +++ */
+    .logement-container {
+        flex-direction : column;
+    }
 
-    .h-card-home img { width : 104px; min-width : 104px;  }
+    .popular-logement {
+        min-width : auto;
+    }
 
-    
+    .card-popular-home img {
+        width : 104px;
+        min-width : 104px;
+    }
 
-    .logement-container { flex-direction : column; }
+    .related-logement {
+        order : 1;
+        background-color : transparent;
+        padding: 36px 20px 0 20px;
+    }
+ 
+    .card-home {
+        width : 100%;
+        margin: 0 0 12px 0;
+    }
 
-    .related-logement { order : 1; background-color : transparent; padding: 36px 20px 0 20px; }
+    .related-logement__see-more {
+        margin: 20px 0 0 0;
+    }
 
+    /** +++ Activity [Section] +++ */
+    .activity-related {
+        margin : 0 20px 25px 20px;
+        padding : 36px 0 0 0;
+    }
 
-        
-            .v-card-home { width : 100%; margin: 0 0 12px 0; }
+    .activity-related__card-container { 
+        display : flex;
+        flex-wrap: wrap;
+    }
 
-
-
-        .related-logement__see-more { margin: 20px 0 0 0; }
-
-        .activity-related { margin : 0 20px 25px 20px; padding : 36px 0 0 0; }
-
-            .activity-related__card-container { 
-                display : flex;
-                flex-wrap: wrap;
-            }
-
-            .card-activity {
-                width : 100%;
-                height : 190px;
-                gap : 24px;
-            }
-
-        
-
-    
+    .card-activity {
+        width : 100%;
+        height : 190px;
+        gap : 24px;
+    }
 }
