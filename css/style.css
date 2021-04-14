@@ -551,7 +551,7 @@ a:visited {
     font-family: 'Raleway-bold', Arial, Helvetica, sans-serif;
 }
 
-.related-logement__see-more a:hover {
+.related-logement__see-more:hover {
     text-decoration: underline;
 }
 
